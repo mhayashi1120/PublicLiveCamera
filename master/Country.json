@@ -1,0 +1,345 @@
+[
+{"Numeric code":"004","English Short name":"Afghanistan","French Short name":"Afghanistan (l')","Alpha2 Code":"AF","Alpha3 Code":"AFG"},
+{"Numeric code":"008","English Short name":"Albania","French Short name":"Albanie (l')","Alpha2 Code":"AL","Alpha3 Code":"ALB"},
+{"Numeric code":"010","English Short name":"Antarctica","French Short name":"Antarctique (l')","Alpha2 Code":"AQ","Alpha3 Code":"ATA"},
+{"Numeric code":"012","English Short name":"Algeria","French Short name":"Algérie (l')","Alpha2 Code":"DZ","Alpha3 Code":"DZA"}
+,
+{"Numeric code":"016","English Short name":"American Samoa","French Short name":"Samoa américaines (les)","Alpha2 Code":"AS","Alpha3 Code":"ASM"}
+,
+{"Numeric code":"020","English Short name":"Andorra","French Short name":"Andorre (l')","Alpha2 Code":"AD","Alpha3 Code":"AND"},
+{"Numeric code":"024","English Short name":"Angola","French Short name":"Angola (l')","Alpha2 Code":"AO","Alpha3 Code":"AGO"},
+{"Numeric code":"028","English Short name":"Antigua and Barbuda","French Short name":"Antigua-et-Barbuda","Alpha2 Code":"AG","Alpha3 Code":"ATG"},
+{"Numeric code":"031","English Short name":"Azerbaijan","French Short name":"Azerbaïdjan (l')","Alpha2 Code":"AZ","Alpha3 Code":"AZE"}
+,
+{"Numeric code":"032","English Short name":"Argentina","French Short name":"Argentine (l')","Alpha2 Code":"AR","Alpha3 Code":"ARG"},
+{"Numeric code":"036","English Short name":"Australia","French Short name":"Australie (l')","Alpha2 Code":"AU","Alpha3 Code":"AUS"},
+{"Numeric code":"040","English Short name":"Austria","French Short name":"Autriche (l')","Alpha2 Code":"AT","Alpha3 Code":"AUT"},
+{"Numeric code":"044","English Short name":"Bahamas (the)","French Short name":"Bahamas (les)","Alpha2 Code":"BS","Alpha3 Code":"BHS"},
+{"Numeric code":"048","English Short name":"Bahrain","French Short name":"Bahreïn","Alpha2 Code":"BH","Alpha3 Code":"BHR"}
+,
+{"Numeric code":"050","English Short name":"Bangladesh","French Short name":"Bangladesh (le)","Alpha2 Code":"BD","Alpha3 Code":"BGD"},
+{"Numeric code":"051","English Short name":"Armenia","French Short name":"Arménie (l')","Alpha2 Code":"AM","Alpha3 Code":"ARM"}
+,
+{"Numeric code":"052","English Short name":"Barbados","French Short name":"Barbade (la)","Alpha2 Code":"BB","Alpha3 Code":"BRB"},
+{"Numeric code":"056","English Short name":"Belgium","French Short name":"Belgique (la)","Alpha2 Code":"BE","Alpha3 Code":"BEL"},
+{"Numeric code":"060","English Short name":"Bermuda","French Short name":"Bermudes (les)","Alpha2 Code":"BM","Alpha3 Code":"BMU"},
+{"Numeric code":"064","English Short name":"Bhutan","French Short name":"Bhoutan (le)","Alpha2 Code":"BT","Alpha3 Code":"BTN"},
+{"Numeric code":"068","English Short name":"Bolivia (Plurinational State of)","French Short name":"Bolivie (État plurinational de)","Alpha2 Code":"BO","Alpha3 Code":"BOL"}
+,
+{"Numeric code":"070","English Short name":"Bosnia and Herzegovina","French Short name":"Bosnie-Herzégovine (la)","Alpha2 Code":"BA","Alpha3 Code":"BIH"}
+,
+{"Numeric code":"072","English Short name":"Botswana","French Short name":"Botswana (le)","Alpha2 Code":"BW","Alpha3 Code":"BWA"},
+{"Numeric code":"074","English Short name":"Bouvet Island","French Short name":"Bouvet (l'Île)","Alpha2 Code":"BV","Alpha3 Code":"BVT"}
+,
+{"Numeric code":"076","English Short name":"Brazil","French Short name":"Brésil (le)","Alpha2 Code":"BR","Alpha3 Code":"BRA"}
+,
+{"Numeric code":"084","English Short name":"Belize","French Short name":"Belize (le)","Alpha2 Code":"BZ","Alpha3 Code":"BLZ"},
+{"Numeric code":"086","English Short name":"British Indian Ocean Territory (the)","French Short name":"Indien (le Territoire britannique de l'océan)","Alpha2 Code":"IO","Alpha3 Code":"IOT"}
+,
+{"Numeric code":"090","English Short name":"Solomon Islands","French Short name":"Salomon (les Îles)","Alpha2 Code":"SB","Alpha3 Code":"SLB"}
+,
+{"Numeric code":"092","English Short name":"Virgin Islands (British)","French Short name":"Vierges britanniques (les Îles)","Alpha2 Code":"VG","Alpha3 Code":"VGB"}
+,
+{"Numeric code":"096","English Short name":"Brunei Darussalam","French Short name":"Brunéi Darussalam (le)","Alpha2 Code":"BN","Alpha3 Code":"BRN"}
+,
+{"Numeric code":"100","English Short name":"Bulgaria","French Short name":"Bulgarie (la)","Alpha2 Code":"BG","Alpha3 Code":"BGR"},
+{"Numeric code":"104","English Short name":"Myanmar","French Short name":"Myanmar (le)","Alpha2 Code":"MM","Alpha3 Code":"MMR"},
+{"Numeric code":"108","English Short name":"Burundi","French Short name":"Burundi (le)","Alpha2 Code":"BI","Alpha3 Code":"BDI"},
+{"Numeric code":"112","English Short name":"Belarus","French Short name":"Bélarus (le)","Alpha2 Code":"BY","Alpha3 Code":"BLR"}
+,
+{"Numeric code":"116","English Short name":"Cambodia","French Short name":"Cambodge (le)","Alpha2 Code":"KH","Alpha3 Code":"KHM"},
+{"Numeric code":"120","English Short name":"Cameroon","French Short name":"Cameroun (le)","Alpha2 Code":"CM","Alpha3 Code":"CMR"},
+{"Numeric code":"124","English Short name":"Canada","French Short name":"Canada (le)","Alpha2 Code":"CA","Alpha3 Code":"CAN"},
+{"Numeric code":"132","English Short name":"Cabo Verde","French Short name":"Cabo Verde","Alpha2 Code":"CV","Alpha3 Code":"CPV"},
+{"Numeric code":"136","English Short name":"Cayman Islands (the)","French Short name":"Caïmans (les Îles)","Alpha2 Code":"KY","Alpha3 Code":"CYM"}
+,
+{"Numeric code":"140","English Short name":"Central African Republic (the)","French Short name":"République centrafricaine (la)","Alpha2 Code":"CF","Alpha3 Code":"CAF"}
+,
+{"Numeric code":"144","English Short name":"Sri Lanka","French Short name":"Sri Lanka","Alpha2 Code":"LK","Alpha3 Code":"LKA"},
+{"Numeric code":"148","English Short name":"Chad","French Short name":"Tchad (le)","Alpha2 Code":"TD","Alpha3 Code":"TCD"},
+{"Numeric code":"152","English Short name":"Chile","French Short name":"Chili (le)","Alpha2 Code":"CL","Alpha3 Code":"CHL"},
+{"Numeric code":"156","English Short name":"China","French Short name":"Chine (la)","Alpha2 Code":"CN","Alpha3 Code":"CHN"},
+{"Numeric code":"158","English Short name":"Taiwan (Province of China)","French Short name":"Taïwan (Province de Chine)","Alpha2 Code":"TW","Alpha3 Code":"TWN"}
+,
+{"Numeric code":"162","English Short name":"Christmas Island","French Short name":"Christmas (l'Île)","Alpha2 Code":"CX","Alpha3 Code":"CXR"}
+,
+{"Numeric code":"166","English Short name":"Cocos (Keeling) Islands (the)","French Short name":"Cocos (les Îles)/ Keeling (les Îles)","Alpha2 Code":"CC","Alpha3 Code":"CCK"}
+,
+{"Numeric code":"170","English Short name":"Colombia","French Short name":"Colombie (la)","Alpha2 Code":"CO","Alpha3 Code":"COL"},
+{"Numeric code":"174","English Short name":"Comoros (the)","French Short name":"Comores (les)","Alpha2 Code":"KM","Alpha3 Code":"COM"},
+{"Numeric code":"175","English Short name":"Mayotte","French Short name":"Mayotte","Alpha2 Code":"YT","Alpha3 Code":"MYT"},
+{"Numeric code":"178","English Short name":"Congo (the)","French Short name":"Congo (le)","Alpha2 Code":"CG","Alpha3 Code":"COG"},
+{"Numeric code":"180","English Short name":"Congo (the Democratic Republic of the)","French Short name":"Congo (la République démocratique du)","Alpha2 Code":"CD","Alpha3 Code":"COD"}
+,
+{"Numeric code":"184","English Short name":"Cook Islands (the)","French Short name":"Cook (les Îles)","Alpha2 Code":"CK","Alpha3 Code":"COK"}
+,
+{"Numeric code":"188","English Short name":"Costa Rica","French Short name":"Costa Rica (le)","Alpha2 Code":"CR","Alpha3 Code":"CRI"},
+{"Numeric code":"191","English Short name":"Croatia","French Short name":"Croatie (la)","Alpha2 Code":"HR","Alpha3 Code":"HRV"},
+{"Numeric code":"192","English Short name":"Cuba","French Short name":"Cuba","Alpha2 Code":"CU","Alpha3 Code":"CUB"},
+{"Numeric code":"196","English Short name":"Cyprus","French Short name":"Chypre","Alpha2 Code":"CY","Alpha3 Code":"CYP"},
+{"Numeric code":"203","English Short name":"Czechia","French Short name":"Tchéquie (la)","Alpha2 Code":"CZ","Alpha3 Code":"CZE"}
+,
+{"Numeric code":"204","English Short name":"Benin","French Short name":"Bénin (le)","Alpha2 Code":"BJ","Alpha3 Code":"BEN"}
+,
+{"Numeric code":"208","English Short name":"Denmark","French Short name":"Danemark (le)","Alpha2 Code":"DK","Alpha3 Code":"DNK"},
+{"Numeric code":"212","English Short name":"Dominica","French Short name":"Dominique (la)","Alpha2 Code":"DM","Alpha3 Code":"DMA"},
+{"Numeric code":"214","English Short name":"Dominican Republic (the)","French Short name":"dominicaine (la République)","Alpha2 Code":"DO","Alpha3 Code":"DOM"}
+,
+{"Numeric code":"218","English Short name":"Ecuador","French Short name":"Équateur (l')","Alpha2 Code":"EC","Alpha3 Code":"ECU"}
+,
+{"Numeric code":"222","English Short name":"El Salvador","French Short name":"El Salvador","Alpha2 Code":"SV","Alpha3 Code":"SLV"},
+{"Numeric code":"226","English Short name":"Equatorial Guinea","French Short name":"Guinée équatoriale (la)","Alpha2 Code":"GQ","Alpha3 Code":"GNQ"}
+,
+{"Numeric code":"231","English Short name":"Ethiopia","French Short name":"Éthiopie (l')","Alpha2 Code":"ET","Alpha3 Code":"ETH"}
+,
+{"Numeric code":"232","English Short name":"Eritrea","French Short name":"Érythrée (l')","Alpha2 Code":"ER","Alpha3 Code":"ERI"}
+,
+{"Numeric code":"233","English Short name":"Estonia","French Short name":"Estonie (l')","Alpha2 Code":"EE","Alpha3 Code":"EST"},
+{"Numeric code":"234","English Short name":"Faroe Islands (the)","French Short name":"Féroé (les Îles)","Alpha2 Code":"FO","Alpha3 Code":"FRO"}
+,
+{"Numeric code":"238","English Short name":"Falkland Islands (the) [Malvinas]","French Short name":"Falkland (les Îles)/Malouines (les Îles)","Alpha2 Code":"FK","Alpha3 Code":"FLK"}
+,
+{"Numeric code":"239","English Short name":"South Georgia and the South Sandwich Islands","French Short name":"Géorgie du Sud-et-les Îles Sandwich du Sud (la)","Alpha2 Code":"GS","Alpha3 Code":"SGS"}
+,
+{"Numeric code":"242","English Short name":"Fiji","French Short name":"Fidji (les)","Alpha2 Code":"FJ","Alpha3 Code":"FJI"},
+{"Numeric code":"246","English Short name":"Finland","French Short name":"Finlande (la)","Alpha2 Code":"FI","Alpha3 Code":"FIN"},
+{"Numeric code":"248","English Short name":"Åland Islands","French Short name":"Åland(les Îles)","Alpha2 Code":"AX","Alpha3 Code":"ALA"}
+,
+{"Numeric code":"250","English Short name":"France","French Short name":"France (la)","Alpha2 Code":"FR","Alpha3 Code":"FRA"},
+{"Numeric code":"254","English Short name":"French Guiana","French Short name":"Guyane française (la )","Alpha2 Code":"GF","Alpha3 Code":"GUF"}
+,
+{"Numeric code":"258","English Short name":"French Polynesia","French Short name":"Polynésie française (la)","Alpha2 Code":"PF","Alpha3 Code":"PYF"}
+,
+{"Numeric code":"260","English Short name":"French Southern Territories (the)","French Short name":"Terres australes françaises (les)","Alpha2 Code":"TF","Alpha3 Code":"ATF"}
+,
+{"Numeric code":"262","English Short name":"Djibouti","French Short name":"Djibouti","Alpha2 Code":"DJ","Alpha3 Code":"DJI"},
+{"Numeric code":"266","English Short name":"Gabon","French Short name":"Gabon (le)","Alpha2 Code":"GA","Alpha3 Code":"GAB"},
+{"Numeric code":"268","English Short name":"Georgia","French Short name":"Géorgie (la)","Alpha2 Code":"GE","Alpha3 Code":"GEO"}
+,
+{"Numeric code":"270","English Short name":"Gambia (the)","French Short name":"Gambie (la)","Alpha2 Code":"GM","Alpha3 Code":"GMB"},
+{"Numeric code":"275","English Short name":"Palestine, State of","French Short name":"Palestine, État de","Alpha2 Code":"PS","Alpha3 Code":"PSE"}
+,
+{"Numeric code":"276","English Short name":"Germany","French Short name":"Allemagne (l')","Alpha2 Code":"DE","Alpha3 Code":"DEU"},
+{"Numeric code":"288","English Short name":"Ghana","French Short name":"Ghana (le)","Alpha2 Code":"GH","Alpha3 Code":"GHA"},
+{"Numeric code":"292","English Short name":"Gibraltar","French Short name":"Gibraltar","Alpha2 Code":"GI","Alpha3 Code":"GIB"},
+{"Numeric code":"296","English Short name":"Kiribati","French Short name":"Kiribati","Alpha2 Code":"KI","Alpha3 Code":"KIR"},
+{"Numeric code":"300","English Short name":"Greece","French Short name":"Grèce (la)","Alpha2 Code":"GR","Alpha3 Code":"GRC"}
+,
+{"Numeric code":"304","English Short name":"Greenland","French Short name":"Groenland (le)","Alpha2 Code":"GL","Alpha3 Code":"GRL"},
+{"Numeric code":"308","English Short name":"Grenada","French Short name":"Grenade (la)","Alpha2 Code":"GD","Alpha3 Code":"GRD"},
+{"Numeric code":"312","English Short name":"Guadeloupe","French Short name":"Guadeloupe (la)","Alpha2 Code":"GP","Alpha3 Code":"GLP"},
+{"Numeric code":"316","English Short name":"Guam","French Short name":"Guam","Alpha2 Code":"GU","Alpha3 Code":"GUM"},
+{"Numeric code":"320","English Short name":"Guatemala","French Short name":"Guatemala (le)","Alpha2 Code":"GT","Alpha3 Code":"GTM"},
+{"Numeric code":"324","English Short name":"Guinea","French Short name":"Guinée (la)","Alpha2 Code":"GN","Alpha3 Code":"GIN"}
+,
+{"Numeric code":"328","English Short name":"Guyana","French Short name":"Guyana (le)","Alpha2 Code":"GY","Alpha3 Code":"GUY"},
+{"Numeric code":"332","English Short name":"Haiti","French Short name":"Haïti","Alpha2 Code":"HT","Alpha3 Code":"HTI"}
+,
+{"Numeric code":"334","English Short name":"Heard Island and McDonald Islands","French Short name":"Heard-et-Îles MacDonald (l'Île)","Alpha2 Code":"HM","Alpha3 Code":"HMD"}
+,
+{"Numeric code":"336","English Short name":"Holy See (the)","French Short name":"Saint-Siège (le)","Alpha2 Code":"VA","Alpha3 Code":"VAT"}
+,
+{"Numeric code":"340","English Short name":"Honduras","French Short name":"Honduras (le)","Alpha2 Code":"HN","Alpha3 Code":"HND"},
+{"Numeric code":"344","English Short name":"Hong Kong","French Short name":"Hong Kong","Alpha2 Code":"HK","Alpha3 Code":"HKG"},
+{"Numeric code":"348","English Short name":"Hungary","French Short name":"Hongrie (la)","Alpha2 Code":"HU","Alpha3 Code":"HUN"},
+{"Numeric code":"352","English Short name":"Iceland","French Short name":"Islande (l')","Alpha2 Code":"IS","Alpha3 Code":"ISL"},
+{"Numeric code":"356","English Short name":"India","French Short name":"Inde (l')","Alpha2 Code":"IN","Alpha3 Code":"IND"},
+{"Numeric code":"360","English Short name":"Indonesia","French Short name":"Indonésie (l')","Alpha2 Code":"ID","Alpha3 Code":"IDN"}
+,
+{"Numeric code":"364","English Short name":"Iran (Islamic Republic of)","French Short name":"Iran (République Islamique d')","Alpha2 Code":"IR","Alpha3 Code":"IRN"}
+,
+{"Numeric code":"368","English Short name":"Iraq","French Short name":"Iraq (l')","Alpha2 Code":"IQ","Alpha3 Code":"IRQ"},
+{"Numeric code":"372","English Short name":"Ireland","French Short name":"Irlande (l')","Alpha2 Code":"IE","Alpha3 Code":"IRL"},
+{"Numeric code":"376","English Short name":"Israel","French Short name":"Israël","Alpha2 Code":"IL","Alpha3 Code":"ISR"}
+,
+{"Numeric code":"380","English Short name":"Italy","French Short name":"Italie (l')","Alpha2 Code":"IT","Alpha3 Code":"ITA"},
+{"Numeric code":"384","English Short name":"Côte d'Ivoire","French Short name":"Côte d'Ivoire (la)","Alpha2 Code":"CI","Alpha3 Code":"CIV"}
+,
+{"Numeric code":"388","English Short name":"Jamaica","French Short name":"Jamaïque (la)","Alpha2 Code":"JM","Alpha3 Code":"JAM"}
+,
+{"Numeric code":"392","English Short name":"Japan","French Short name":"Japon (le)","Alpha2 Code":"JP","Alpha3 Code":"JPN"},
+{"Numeric code":"398","English Short name":"Kazakhstan","French Short name":"Kazakhstan (le)","Alpha2 Code":"KZ","Alpha3 Code":"KAZ"},
+{"Numeric code":"400","English Short name":"Jordan","French Short name":"Jordanie (la)","Alpha2 Code":"JO","Alpha3 Code":"JOR"},
+{"Numeric code":"404","English Short name":"Kenya","French Short name":"Kenya (le)","Alpha2 Code":"KE","Alpha3 Code":"KEN"},
+{"Numeric code":"408","English Short name":"Korea (the Democratic People's Republic of)","French Short name":"Corée (la République populaire démocratique de)","Alpha2 Code":"KP","Alpha3 Code":"PRK"}
+,
+{"Numeric code":"410","English Short name":"Korea (the Republic of)","French Short name":"Corée (la République de)","Alpha2 Code":"KR","Alpha3 Code":"KOR"}
+,
+{"Numeric code":"414","English Short name":"Kuwait","French Short name":"Koweït (le)","Alpha2 Code":"KW","Alpha3 Code":"KWT"}
+,
+{"Numeric code":"417","English Short name":"Kyrgyzstan","French Short name":"Kirghizistan (le)","Alpha2 Code":"KG","Alpha3 Code":"KGZ"},
+{"Numeric code":"418","English Short name":"Lao People's Democratic Republic (the)","French Short name":"Lao (la République démocratique populaire)","Alpha2 Code":"LA","Alpha3 Code":"LAO"}
+,
+{"Numeric code":"422","English Short name":"Lebanon","French Short name":"Liban (le)","Alpha2 Code":"LB","Alpha3 Code":"LBN"},
+{"Numeric code":"426","English Short name":"Lesotho","French Short name":"Lesotho (le)","Alpha2 Code":"LS","Alpha3 Code":"LSO"},
+{"Numeric code":"428","English Short name":"Latvia","French Short name":"Lettonie (la)","Alpha2 Code":"LV","Alpha3 Code":"LVA"},
+{"Numeric code":"430","English Short name":"Liberia","French Short name":"Libéria (le)","Alpha2 Code":"LR","Alpha3 Code":"LBR"}
+,
+{"Numeric code":"434","English Short name":"Libya","French Short name":"Libye (la)","Alpha2 Code":"LY","Alpha3 Code":"LBY"},
+{"Numeric code":"438","English Short name":"Liechtenstein","French Short name":"Liechtenstein (le)","Alpha2 Code":"LI","Alpha3 Code":"LIE"},
+{"Numeric code":"440","English Short name":"Lithuania","French Short name":"Lituanie (la)","Alpha2 Code":"LT","Alpha3 Code":"LTU"},
+{"Numeric code":"442","English Short name":"Luxembourg","French Short name":"Luxembourg (le)","Alpha2 Code":"LU","Alpha3 Code":"LUX"},
+{"Numeric code":"446","English Short name":"Macao","French Short name":"Macao","Alpha2 Code":"MO","Alpha3 Code":"MAC"},
+{"Numeric code":"450","English Short name":"Madagascar","French Short name":"Madagascar","Alpha2 Code":"MG","Alpha3 Code":"MDG"},
+{"Numeric code":"454","English Short name":"Malawi","French Short name":"Malawi (le)","Alpha2 Code":"MW","Alpha3 Code":"MWI"},
+{"Numeric code":"458","English Short name":"Malaysia","French Short name":"Malaisie (la)","Alpha2 Code":"MY","Alpha3 Code":"MYS"},
+{"Numeric code":"462","English Short name":"Maldives","French Short name":"Maldives (les)","Alpha2 Code":"MV","Alpha3 Code":"MDV"},
+{"Numeric code":"466","English Short name":"Mali","French Short name":"Mali (le)","Alpha2 Code":"ML","Alpha3 Code":"MLI"},
+{"Numeric code":"470","English Short name":"Malta","French Short name":"Malte","Alpha2 Code":"MT","Alpha3 Code":"MLT"},
+{"Numeric code":"474","English Short name":"Martinique","French Short name":"Martinique (la)","Alpha2 Code":"MQ","Alpha3 Code":"MTQ"},
+{"Numeric code":"478","English Short name":"Mauritania","French Short name":"Mauritanie (la)","Alpha2 Code":"MR","Alpha3 Code":"MRT"},
+{"Numeric code":"480","English Short name":"Mauritius","French Short name":"Maurice","Alpha2 Code":"MU","Alpha3 Code":"MUS"},
+{"Numeric code":"484","English Short name":"Mexico","French Short name":"Mexique (le)","Alpha2 Code":"MX","Alpha3 Code":"MEX"},
+{"Numeric code":"492","English Short name":"Monaco","French Short name":"Monaco","Alpha2 Code":"MC","Alpha3 Code":"MCO"},
+{"Numeric code":"496","English Short name":"Mongolia","French Short name":"Mongolie (la)","Alpha2 Code":"MN","Alpha3 Code":"MNG"},
+{"Numeric code":"498","English Short name":"Moldova (the Republic of)","French Short name":"Moldova (la République de)","Alpha2 Code":"MD","Alpha3 Code":"MDA"}
+,
+{"Numeric code":"499","English Short name":"Montenegro","French Short name":"Monténégro (le)","Alpha2 Code":"ME","Alpha3 Code":"MNE"}
+,
+{"Numeric code":"500","English Short name":"Montserrat","French Short name":"Montserrat","Alpha2 Code":"MS","Alpha3 Code":"MSR"},
+{"Numeric code":"504","English Short name":"Morocco","French Short name":"Maroc (le)","Alpha2 Code":"MA","Alpha3 Code":"MAR"},
+{"Numeric code":"508","English Short name":"Mozambique","French Short name":"Mozambique (le)","Alpha2 Code":"MZ","Alpha3 Code":"MOZ"},
+{"Numeric code":"512","English Short name":"Oman","French Short name":"Oman","Alpha2 Code":"OM","Alpha3 Code":"OMN"},
+{"Numeric code":"516","English Short name":"Namibia","French Short name":"Namibie (la)","Alpha2 Code":"NA","Alpha3 Code":"NAM"},
+{"Numeric code":"520","English Short name":"Nauru","French Short name":"Nauru","Alpha2 Code":"NR","Alpha3 Code":"NRU"},
+{"Numeric code":"524","English Short name":"Nepal","French Short name":"Népal (le)","Alpha2 Code":"NP","Alpha3 Code":"NPL"}
+,
+{"Numeric code":"528","English Short name":"Netherlands (the)","French Short name":"Pays-Bas (les)","Alpha2 Code":"NL","Alpha3 Code":"NLD"},
+{"Numeric code":"531","English Short name":"Curaçao","French Short name":"Curaçao","Alpha2 Code":"CW","Alpha3 Code":"CUW"}
+,
+{"Numeric code":"533","English Short name":"Aruba","French Short name":"Aruba","Alpha2 Code":"AW","Alpha3 Code":"ABW"},
+{"Numeric code":"534","English Short name":"Sint Maarten (Dutch part)","French Short name":"Saint-Martin (partie néerlandaise)","Alpha2 Code":"SX","Alpha3 Code":"SXM"}
+,
+{"Numeric code":"535","English Short name":"Bonaire, Sint Eustatius and Saba","French Short name":"Bonaire, Saint-Eustache et Saba","Alpha2 Code":"BQ","Alpha3 Code":"BES"},
+{"Numeric code":"540","English Short name":"New Caledonia","French Short name":"Nouvelle-Calédonie (la)","Alpha2 Code":"NC","Alpha3 Code":"NCL"}
+,
+{"Numeric code":"548","English Short name":"Vanuatu","French Short name":"Vanuatu (le)","Alpha2 Code":"VU","Alpha3 Code":"VUT"},
+{"Numeric code":"554","English Short name":"New Zealand","French Short name":"Nouvelle-Zélande (la)","Alpha2 Code":"NZ","Alpha3 Code":"NZL"}
+,
+{"Numeric code":"558","English Short name":"Nicaragua","French Short name":"Nicaragua (le)","Alpha2 Code":"NI","Alpha3 Code":"NIC"},
+{"Numeric code":"562","English Short name":"Niger (the)","French Short name":"Niger (le)","Alpha2 Code":"NE","Alpha3 Code":"NER"},
+{"Numeric code":"566","English Short name":"Nigeria","French Short name":"Nigéria (le)","Alpha2 Code":"NG","Alpha3 Code":"NGA"}
+,
+{"Numeric code":"570","English Short name":"Niue","French Short name":"Niue","Alpha2 Code":"NU","Alpha3 Code":"NIU"},
+{"Numeric code":"574","English Short name":"Norfolk Island","French Short name":"Norfolk (l'Île)","Alpha2 Code":"NF","Alpha3 Code":"NFK"}
+,
+{"Numeric code":"578","English Short name":"Norway","French Short name":"Norvège (la)","Alpha2 Code":"NO","Alpha3 Code":"NOR"}
+,
+{"Numeric code":"580","English Short name":"Northern Mariana Islands (the)","French Short name":"Mariannes du Nord (les Îles)","Alpha2 Code":"MP","Alpha3 Code":"MNP"}
+,
+{"Numeric code":"581","English Short name":"United States Minor Outlying Islands (the)","French Short name":"Îles mineures éloignées des États-Unis (les)","Alpha2 Code":"UM","Alpha3 Code":"UMI"}
+,
+{"Numeric code":"583","English Short name":"Micronesia (Federated States of)","French Short name":"Micronésie (États fédérés de)","Alpha2 Code":"FM","Alpha3 Code":"FSM"}
+,
+{"Numeric code":"584","English Short name":"Marshall Islands (the)","French Short name":"Marshall (les Îles)","Alpha2 Code":"MH","Alpha3 Code":"MHL"}
+,
+{"Numeric code":"585","English Short name":"Palau","French Short name":"Palaos (les)","Alpha2 Code":"PW","Alpha3 Code":"PLW"},
+{"Numeric code":"586","English Short name":"Pakistan","French Short name":"Pakistan (le)","Alpha2 Code":"PK","Alpha3 Code":"PAK"},
+{"Numeric code":"591","English Short name":"Panama","French Short name":"Panama (le)","Alpha2 Code":"PA","Alpha3 Code":"PAN"},
+{"Numeric code":"598","English Short name":"Papua New Guinea","French Short name":"Papouasie-Nouvelle-Guinée (la)","Alpha2 Code":"PG","Alpha3 Code":"PNG"}
+,
+{"Numeric code":"600","English Short name":"Paraguay","French Short name":"Paraguay (le)","Alpha2 Code":"PY","Alpha3 Code":"PRY"},
+{"Numeric code":"604","English Short name":"Peru","French Short name":"Pérou (le)","Alpha2 Code":"PE","Alpha3 Code":"PER"}
+,
+{"Numeric code":"608","English Short name":"Philippines (the)","French Short name":"Philippines (les)","Alpha2 Code":"PH","Alpha3 Code":"PHL"},
+{"Numeric code":"612","English Short name":"Pitcairn","French Short name":"Pitcairn","Alpha2 Code":"PN","Alpha3 Code":"PCN"},
+{"Numeric code":"616","English Short name":"Poland","French Short name":"Pologne (la)","Alpha2 Code":"PL","Alpha3 Code":"POL"},
+{"Numeric code":"620","English Short name":"Portugal","French Short name":"Portugal (le)","Alpha2 Code":"PT","Alpha3 Code":"PRT"},
+{"Numeric code":"624","English Short name":"Guinea-Bissau","French Short name":"Guinée-Bissau (la)","Alpha2 Code":"GW","Alpha3 Code":"GNB"}
+,
+{"Numeric code":"626","English Short name":"Timor-Leste","French Short name":"Timor-Leste (le)","Alpha2 Code":"TL","Alpha3 Code":"TLS"},
+{"Numeric code":"630","English Short name":"Puerto Rico","French Short name":"Porto Rico","Alpha2 Code":"PR","Alpha3 Code":"PRI"},
+{"Numeric code":"634","English Short name":"Qatar","French Short name":"Qatar (le)","Alpha2 Code":"QA","Alpha3 Code":"QAT"},
+{"Numeric code":"638","English Short name":"Réunion","French Short name":"Réunion (La)","Alpha2 Code":"RE","Alpha3 Code":"REU"}
+,
+{"Numeric code":"642","English Short name":"Romania","French Short name":"Roumanie (la)","Alpha2 Code":"RO","Alpha3 Code":"ROU"},
+{"Numeric code":"643","English Short name":"Russian Federation (the)","French Short name":"Russie (la Fédération de)","Alpha2 Code":"RU","Alpha3 Code":"RUS"}
+,
+{"Numeric code":"646","English Short name":"Rwanda","French Short name":"Rwanda (le)","Alpha2 Code":"RW","Alpha3 Code":"RWA"},
+{"Numeric code":"652","English Short name":"Saint Barthélemy","French Short name":"Saint-Barthélemy","Alpha2 Code":"BL","Alpha3 Code":"BLM"}
+,
+{"Numeric code":"654","English Short name":"Saint Helena, Ascension and Tristan da Cunha","French Short name":"Sainte-Hélène, Ascension et Tristan da Cunha","Alpha2 Code":"SH","Alpha3 Code":"SHN"}
+,
+{"Numeric code":"659","English Short name":"Saint Kitts and Nevis","French Short name":"Saint-Kitts-et-Nevis","Alpha2 Code":"KN","Alpha3 Code":"KNA"},
+{"Numeric code":"660","English Short name":"Anguilla","French Short name":"Anguilla","Alpha2 Code":"AI","Alpha3 Code":"AIA"},
+{"Numeric code":"662","English Short name":"Saint Lucia","French Short name":"Sainte-Lucie","Alpha2 Code":"LC","Alpha3 Code":"LCA"},
+{"Numeric code":"663","English Short name":"Saint Martin (French part)","French Short name":"Saint-Martin (partie française)","Alpha2 Code":"MF","Alpha3 Code":"MAF"}
+,
+{"Numeric code":"666","English Short name":"Saint Pierre and Miquelon","French Short name":"Saint-Pierre-et-Miquelon","Alpha2 Code":"PM","Alpha3 Code":"SPM"},
+{"Numeric code":"670","English Short name":"Saint Vincent and the Grenadines","French Short name":"Saint-Vincent-et-les Grenadines","Alpha2 Code":"VC","Alpha3 Code":"VCT"},
+{"Numeric code":"674","English Short name":"San Marino","French Short name":"Saint-Marin","Alpha2 Code":"SM","Alpha3 Code":"SMR"},
+{"Numeric code":"678","English Short name":"Sao Tome and Principe","French Short name":"Sao Tomé-et-Principe","Alpha2 Code":"ST","Alpha3 Code":"STP"}
+,
+{"Numeric code":"682","English Short name":"Saudi Arabia","French Short name":"Arabie saoudite (l')","Alpha2 Code":"SA","Alpha3 Code":"SAU"},
+{"Numeric code":"686","English Short name":"Senegal","French Short name":"Sénégal (le)","Alpha2 Code":"SN","Alpha3 Code":"SEN"}
+,
+{"Numeric code":"688","English Short name":"Serbia","French Short name":"Serbie (la)","Alpha2 Code":"RS","Alpha3 Code":"SRB"},
+{"Numeric code":"690","English Short name":"Seychelles","French Short name":"Seychelles (les)","Alpha2 Code":"SC","Alpha3 Code":"SYC"},
+{"Numeric code":"694","English Short name":"Sierra Leone","French Short name":"Sierra Leone (la)","Alpha2 Code":"SL","Alpha3 Code":"SLE"},
+{"Numeric code":"702","English Short name":"Singapore","French Short name":"Singapour","Alpha2 Code":"SG","Alpha3 Code":"SGP"},
+{"Numeric code":"703","English Short name":"Slovakia","French Short name":"Slovaquie (la)","Alpha2 Code":"SK","Alpha3 Code":"SVK"},
+{"Numeric code":"704","English Short name":"Viet Nam","French Short name":"Viet Nam (le)","Alpha2 Code":"VN","Alpha3 Code":"VNM"},
+{"Numeric code":"705","English Short name":"Slovenia","French Short name":"Slovénie (la)","Alpha2 Code":"SI","Alpha3 Code":"SVN"}
+,
+{"Numeric code":"706","English Short name":"Somalia","French Short name":"Somalie (la)","Alpha2 Code":"SO","Alpha3 Code":"SOM"},
+{"Numeric code":"710","English Short name":"South Africa","French Short name":"Afrique du Sud (l')","Alpha2 Code":"ZA","Alpha3 Code":"ZAF"},
+{"Numeric code":"716","English Short name":"Zimbabwe","French Short name":"Zimbabwe (le)","Alpha2 Code":"ZW","Alpha3 Code":"ZWE"},
+{"Numeric code":"724","English Short name":"Spain","French Short name":"Espagne (l')","Alpha2 Code":"ES","Alpha3 Code":"ESP"},
+{"Numeric code":"728","English Short name":"South Sudan","French Short name":"Soudan du Sud (le)","Alpha2 Code":"SS","Alpha3 Code":"SSD"},
+{"Numeric code":"729","English Short name":"Sudan (the)","French Short name":"Soudan (le)","Alpha2 Code":"SD","Alpha3 Code":"SDN"},
+{"Numeric code":"732","English Short name":"Western Sahara*","French Short name":"Sahara occidental (le)*","Alpha2 Code":"EH","Alpha3 Code":"ESH"},
+{"Numeric code":"740","English Short name":"Suriname","French Short name":"Suriname (le)","Alpha2 Code":"SR","Alpha3 Code":"SUR"},
+{"Numeric code":"744","English Short name":"Svalbard and Jan Mayen","French Short name":"Svalbard et l'Île Jan Mayen (le)","Alpha2 Code":"SJ","Alpha3 Code":"SJM"}
+,
+{"Numeric code":"748","English Short name":"Eswatini","French Short name":"Eswatini (l')","Alpha2 Code":"SZ","Alpha3 Code":"SWZ"},
+{"Numeric code":"752","English Short name":"Sweden","French Short name":"Suède (la)","Alpha2 Code":"SE","Alpha3 Code":"SWE"}
+,
+{"Numeric code":"756","English Short name":"Switzerland","French Short name":"Suisse (la)","Alpha2 Code":"CH","Alpha3 Code":"CHE"},
+{"Numeric code":"760","English Short name":"Syrian Arab Republic (the)","French Short name":"République arabe syrienne (la)","Alpha2 Code":"SY","Alpha3 Code":"SYR"}
+,
+{"Numeric code":"762","English Short name":"Tajikistan","French Short name":"Tadjikistan (le)","Alpha2 Code":"TJ","Alpha3 Code":"TJK"},
+{"Numeric code":"764","English Short name":"Thailand","French Short name":"Thaïlande (la)","Alpha2 Code":"TH","Alpha3 Code":"THA"}
+,
+{"Numeric code":"768","English Short name":"Togo","French Short name":"Togo (le)","Alpha2 Code":"TG","Alpha3 Code":"TGO"},
+{"Numeric code":"772","English Short name":"Tokelau","French Short name":"Tokelau (les)","Alpha2 Code":"TK","Alpha3 Code":"TKL"},
+{"Numeric code":"776","English Short name":"Tonga","French Short name":"Tonga (les)","Alpha2 Code":"TO","Alpha3 Code":"TON"},
+{"Numeric code":"780","English Short name":"Trinidad and Tobago","French Short name":"Trinité-et-Tobago (la)","Alpha2 Code":"TT","Alpha3 Code":"TTO"}
+,
+{"Numeric code":"784","English Short name":"United Arab Emirates (the)","French Short name":"Émirats arabes unis (les)","Alpha2 Code":"AE","Alpha3 Code":"ARE"}
+,
+{"Numeric code":"788","English Short name":"Tunisia","French Short name":"Tunisie (la)","Alpha2 Code":"TN","Alpha3 Code":"TUN"},
+{"Numeric code":"792","English Short name":"Turkey","French Short name":"Turquie (la)","Alpha2 Code":"TR","Alpha3 Code":"TUR"},
+{"Numeric code":"795","English Short name":"Turkmenistan","French Short name":"Turkménistan (le)","Alpha2 Code":"TM","Alpha3 Code":"TKM"}
+,
+{"Numeric code":"796","English Short name":"Turks and Caicos Islands (the)","French Short name":"Turks-et-Caïcos (les Îles)","Alpha2 Code":"TC","Alpha3 Code":"TCA"}
+,
+{"Numeric code":"798","English Short name":"Tuvalu","French Short name":"Tuvalu (les)","Alpha2 Code":"TV","Alpha3 Code":"TUV"},
+{"Numeric code":"800","English Short name":"Uganda","French Short name":"Ouganda (l')","Alpha2 Code":"UG","Alpha3 Code":"UGA"},
+{"Numeric code":"804","English Short name":"Ukraine","French Short name":"Ukraine (l')","Alpha2 Code":"UA","Alpha3 Code":"UKR"},
+{"Numeric code":"807","English Short name":"North Macedonia","French Short name":"Macédoine du Nord (la)","Alpha2 Code":"MK","Alpha3 Code":"MKD"}
+,
+{"Numeric code":"818","English Short name":"Egypt","French Short name":"Égypte (l')","Alpha2 Code":"EG","Alpha3 Code":"EGY"}
+,
+{"Numeric code":"826","English Short name":"United Kingdom of Great Britain and Northern Ireland (the)","French Short name":"Royaume-Uni de Grande-Bretagne et d'Irlande du Nord (le)","Alpha2 Code":"GB","Alpha3 Code":"GBR"},
+{"Numeric code":"831","English Short name":"Guernsey","French Short name":"Guernesey","Alpha2 Code":"GG","Alpha3 Code":"GGY"},
+{"Numeric code":"832","English Short name":"Jersey","French Short name":"Jersey","Alpha2 Code":"JE","Alpha3 Code":"JEY"},
+{"Numeric code":"833","English Short name":"Isle of Man","French Short name":"Île de Man","Alpha2 Code":"IM","Alpha3 Code":"IMN"}
+,
+{"Numeric code":"834","English Short name":"Tanzania, the United Republic of","French Short name":"Tanzanie (la République-Unie de)","Alpha2 Code":"TZ","Alpha3 Code":"TZA"}
+,
+{"Numeric code":"840","English Short name":"United States of America (the)","French Short name":"États-Unis d'Amérique (les)","Alpha2 Code":"US","Alpha3 Code":"USA"}
+,
+{"Numeric code":"850","English Short name":"Virgin Islands (U.S.)","French Short name":"Vierges des États-Unis (les Îles)","Alpha2 Code":"VI","Alpha3 Code":"VIR"}
+,
+{"Numeric code":"854","English Short name":"Burkina Faso","French Short name":"Burkina Faso (le)","Alpha2 Code":"BF","Alpha3 Code":"BFA"},
+{"Numeric code":"858","English Short name":"Uruguay","French Short name":"Uruguay (l')","Alpha2 Code":"UY","Alpha3 Code":"URY"},
+{"Numeric code":"860","English Short name":"Uzbekistan","French Short name":"Ouzbékistan (l')","Alpha2 Code":"UZ","Alpha3 Code":"UZB"}
+,
+{"Numeric code":"862","English Short name":"Venezuela (Bolivarian Republic of)","French Short name":"Venezuela (République bolivarienne du)","Alpha2 Code":"VE","Alpha3 Code":"VEN"}
+,
+{"Numeric code":"876","English Short name":"Wallis and Futuna","French Short name":"Wallis-et-Futuna","Alpha2 Code":"WF","Alpha3 Code":"WLF"},
+{"Numeric code":"882","English Short name":"Samoa","French Short name":"Samoa (le)","Alpha2 Code":"WS","Alpha3 Code":"WSM"},
+{"Numeric code":"887","English Short name":"Yemen","French Short name":"Yémen (le)","Alpha2 Code":"YE","Alpha3 Code":"YEM"}
+,
+{"Numeric code":"894","English Short name":"Zambia","French Short name":"Zambie (la)","Alpha2 Code":"ZM","Alpha3 Code":"ZMB"}
+]

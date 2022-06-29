@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./lib",
+    "baseUrl": "./src",
+    "removeComments": false,
+    "paths": {
+      "s2-geometry": [
+        "@types/s2-geometry"
+      ]
+    }
+  },
+  "include": [
+    "src/*.ts"
+  ]
+}

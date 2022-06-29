@@ -1,0 +1,25 @@
+[
+  {
+    "code": "nexco",
+    "aliases": [
+      "NEXCO",
+      "高速道路",
+      "高速道路株式会社"
+    ]
+  },
+  {
+    "code": "mlit",
+    "aliases": [
+      "MLIT",
+      "国交省",
+      "国土交通省"
+    ]
+  },
+  {
+    "code": "Prefecture",
+    "aliases": [
+      "都道府県",
+      "Pref"
+    ]
+  }
+]

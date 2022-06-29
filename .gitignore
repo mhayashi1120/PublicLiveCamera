@@ -1,0 +1,7 @@
+/__cache__
+/docs
+/node_modules
+/working/*
+!working/.placeholder
+/.npmrc
+/queue
