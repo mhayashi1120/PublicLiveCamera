@@ -12,8 +12,8 @@ jobs:
       PUBLISH_SERVER_HOST: ${{ secrets.PUBLISH_SERVER_HOST }}
       PUBLISH_SERVER_PORT: ${{ secrets.PUBLISH_SERVER_PORT }}
       PUBLISH_SERVER_USER: ${{ secrets.PUBLISH_SERVER_USER }}
-      SSH_KEY_FILE: ${GITHUB_WORKSPACE}/.ssh/id_ecdsa
-      SSH_CONFIG_FILE: ${GITHUB_WORKSPACE}/.ssh/config
+      SSH_KEY_FILE: ${{ github.workspace }}/.ssh/id_ecdsa
+      SSH_CONFIG_FILE: ${{ github.workspace }}/.ssh/config
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
