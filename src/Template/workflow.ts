@@ -70,8 +70,9 @@ jobs:
       PUBLISH_SERVER_HOST: \${{ secrets.PUBLISH_SERVER_HOST }}
       PUBLISH_SERVER_PORT: \${{ secrets.PUBLISH_SERVER_PORT }}
       PUBLISH_SERVER_USER: \${{ secrets.PUBLISH_SERVER_USER }}
-      SSH_KEY_FILE: \${GITHUB_WORKSPACE}/.ssh/id_ecdsa
-      SSH_CONFIG_FILE: \${GITHUB_WORKSPACE}/.ssh/config
+      SSH_KEY_FILE: \${{ github.workspace }}/.ssh/id_ecdsa
+      SSH_CONFIG_FILE: \${{ github.workspace }}/.ssh/config
+      SSH_KNOWN_HOSTS_FILE: \${{ github.workspace }}/.ssh/known_hosts
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -84,15 +85,16 @@ jobs:
       - name: Setup global environment
         run: |
           echo \${GITHUB_WORKSPACE}/node_modules/.bin >> \${GITHUB_PATH}
-      - name: Setup git environment
-        run: |
-          git config --global user.email "mhayashi1120"
-          git config --global user.name "Github Action workflow auto build"
       - name: Setup sync environment
         run: |
+          mkdir -p \${GITHUB_WORKSPACE}/.ssh/
           echo "\${{ secrets.PUBLISH_SERVER_SSH_KEY }}" > \${SSH_KEY_FILE}
+          chmod 600 \${SSH_KEY_FILE}
+          echo "" > \${SSH_KNOWN_HOSTS_FILE}
+          echo "\${{ secrets.PUBLISH_SERVER_HOST_KEY }}" >> \${SSH_KNOWN_HOSTS_FILE}
           echo "" > \${SSH_CONFIG_FILE}
           echo "IdentitiesOnly=true" >> \${SSH_CONFIG_FILE}
+          echo "UserKnownHostsFile=\${SSH_KNOWN_HOSTS_FILE}" >> \${SSH_CONFIG_FILE}
       - name: Prepare packages
         run: |
           npm install

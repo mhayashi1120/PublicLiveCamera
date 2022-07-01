@@ -1,1 +1,0 @@
-put package.json /upload/pacakge.json
