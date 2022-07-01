@@ -14,6 +14,7 @@ jobs:
       PUBLISH_SERVER_USER: ${{ secrets.PUBLISH_SERVER_USER }}
       SSH_KEY_FILE: ${{ github.workspace }}/.ssh/id_ecdsa
       SSH_CONFIG_FILE: ${{ github.workspace }}/.ssh/config
+      SSH_KNOWN_HOSTS_FILE: ${{ github.workspace }}/.ssh/known_hosts
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -30,8 +31,13 @@ jobs:
         run: |
           mkdir -p ${GITHUB_WORKSPACE}/.ssh/
           echo "${{ secrets.PUBLISH_SERVER_SSH_KEY }}" > ${SSH_KEY_FILE}
+          echo "" > ${SSH_KNOWN_HOSTS_FILE}
+          echo "${{ secrets.PUBLISH_SERVER_HOST_KEY }}" >> ${SSH_KNOWN_HOSTS_FILE}
           echo "" > ${SSH_CONFIG_FILE}
           echo "IdentitiesOnly=true" >> ${SSH_CONFIG_FILE}
+          echo "UserKnownHostsFile=${SSH_KNOWN_HOSTS_FILE}" >> ${SSH_CONFIG_FILE}
+          cat ${SSH_KNOWN_HOSTS_FILE}
+          cat ${SSH_CONFIG_FILE}
       - name: Prepare packages
         run: |
           npm install
