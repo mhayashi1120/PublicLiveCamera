@@ -31,13 +31,12 @@ jobs:
         run: |
           mkdir -p ${GITHUB_WORKSPACE}/.ssh/
           echo "${{ secrets.PUBLISH_SERVER_SSH_KEY }}" > ${SSH_KEY_FILE}
+          chmod 600 ${SSH_KEY_FILE}
           echo "" > ${SSH_KNOWN_HOSTS_FILE}
           echo "${{ secrets.PUBLISH_SERVER_HOST_KEY }}" >> ${SSH_KNOWN_HOSTS_FILE}
           echo "" > ${SSH_CONFIG_FILE}
           echo "IdentitiesOnly=true" >> ${SSH_CONFIG_FILE}
           echo "UserKnownHostsFile=${SSH_KNOWN_HOSTS_FILE}" >> ${SSH_CONFIG_FILE}
-          cat ${SSH_KNOWN_HOSTS_FILE}
-          cat ${SSH_CONFIG_FILE}
       - name: Prepare packages
         run: |
           npm install
