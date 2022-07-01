@@ -2,12 +2,13 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import * as tmp from 'tmp';
 import { Command } from 'commander';
 
 import { argToSeconds, argToString, } from 'CommanderTools';
 import { spawn, } from 'child_process';
 import { argsToRunner } from 'Factory';
-import { randomSleep, artificialIdentity, readAsJson, writeJson, writeText, } from 'CrawlerTools';
+import { artificialIdentity, readAsJson, writeJson, writeText, } from 'CrawlerTools';
 import {
   RootTaskJson,
   BaseTaskJson,
@@ -21,6 +22,7 @@ import { OpenLogging, D, ERROR, INFO, VERB, WARN, } from 'Logging';
 import { incSeconds, } from 'DateTools';
 
 import {
+  ScheduleQueueDirectoryName,
   ScheduleQueueDirectory,
   GithubWorkflowDirectory,
 } from 'Settings';
@@ -32,10 +34,10 @@ interface TaskItem {
   taskFile: string;
 }
 
-let forceGitAction: boolean = false;
+let forceMhnetAction: boolean = false;
 
 function usage() {
-  console.log(`usage: scheduler run [ { -t | --timeout } SECONDS ] [ -F | --force-git-action ] ROOT_ID [ ... ]`);
+  console.log(`usage: scheduler run [ { -t | --timeout } SECONDS ] [ -F | --force-mhnet-action ] ROOT_ID [ ... ]`);
   console.log(`       scheduler add [ { -i | --interval } SECOND ] [ { -d | --delay } SECONDS ] \\`);
   console.log(`            [ { -a | --affected-on } TARGETS ]`);
   console.log(`            command [ args... ]`);
@@ -208,69 +210,12 @@ async function execCommand(command: string, args: string[]): Promise<void> {
   }
 }
 
-function shouldGitAction(): boolean {
-  return isGithubAction() || forceGitAction;
+function shouldMhnetAction(): boolean {
+  return isGithubAction() || forceMhnetAction;
 }
 
 function isGithubAction(): boolean {
   return ('GITHUB_WORKFLOW' in process.env);
-}
-
-async function commitWorking(msg: string, ...dirs: string[]) {
-  if (!shouldGitAction()) {
-    return;
-  }
-
-  await execCommand('git', ['add', '-N', ...dirs]);
-  await execCommand('git', ['commit', '-m', msg, '--allow-empty', ...dirs]);
-}
-
-async function pullWorking() {
-  if (!shouldGitAction()) {
-    return;
-  }
-
-  // maybe change unexpected files by bug? or release failed? (e.g. package-lock.json)
-  await execCommand('git', ['checkout', '.']);
-
-  await gitPullWithRebase();
-}
-
-async function gitPullWithRebase() {
-  try {
-    await execCommand('git', ['pull', '--rebase']);
-  } catch (err) {
-    await execCommand('git', ['status']);
-    // Giveup when fail to pull
-    throw err;
-  }
-}
-
-async function pushWorkingSticky() {
-  if (!shouldGitAction()) {
-    return;
-  }
-
-  let count = 0;
-  while (count < 5) {
-    try {
-      await execCommand('git', ['push']);
-
-      return;
-    } catch (err)  {
-      ERROR(`git push failed`, err);
-    } finally {
-      count++;
-    }
-
-    if (5 <= count) {
-      break;
-    }
-
-    await gitPullWithRebase();
-
-    randomSleep(5);
-  }
 }
 
 async function executeTask(task: BaseTaskJson) {
@@ -302,8 +247,6 @@ async function maybeReserveNextTask(now: number, task: TaskItem) {
   json.reservedAt = nextReserveTime.toISOString();
 
   writeJson(task.taskFile, task.json);
-
-  await commitWorking('Next queue is reserved', 'queue');
 }
 
 async function execRun(args: string[]) {
@@ -314,7 +257,7 @@ async function execRun(args: string[]) {
   program.option('-t, --timeout <seconds>',
                  'Terminate scheduler after the seconds',
                  argToSeconds , (10 * 60));
-  program.option('-F, --force-git-action',
+  program.option('-F, --force-mhnet-action',
                  'Force git commit and pull on the working copy like working on Github Action',
                  false);
 
@@ -322,7 +265,7 @@ async function execRun(args: string[]) {
 
   program.parse(args, {from: 'user'});
 
-  forceGitAction = program.opts().forceGitAction as boolean;
+  forceMhnetAction = program.opts().forceMhnetAction as boolean;
 
   const restArgs = program.args;
 
@@ -352,7 +295,67 @@ async function execRun(args: string[]) {
   }
 }
 
+
+async function createArchive(dirs: string[]): Promise<string> {
+  const archiveFile = tmp.fileSync();
+  const rootDir = process.env['GITHUB_WORKSPACE']!;
+
+  await execCommand('tar', ['cJf', archiveFile.name, '-C', rootDir, ScheduleQueueDirectoryName, ...dirs])
+
+  return archiveFile.name;
+}
+
+async function expandArchive(archive: string): Promise<void> {
+  const rootDir = process.env['GITHUB_WORKSPACE']!;
+
+  await execCommand('tar', ['xf', archive, '-C', rootDir]);
+}
+
+async function runFtpCommand(commands: string): Promise<void> {
+  const host = process.env['PUBLISH_SERVER_HOST']!;
+  const port = process.env['PUBLISH_SERVER_PORT']!;
+  const user = process.env['PUBLISH_SERVER_USER']!;
+  const sshConfigFile = process.env['SSH_CONFIG_FILE']!;
+  const sshKeyFile = process.env['SSH_KEY_FILE']!;
+  const batchFile = tmp.fileSync();
+
+  writeText(batchFile.name, commands);
+
+  await execCommand('sftp', ['-b', batchFile.name, '-p', port, '-F', sshConfigFile, '-i', sshKeyFile, `${user}@${host}`]);
+}
+
+async function pullCache(rootId: string): Promise<void> {
+  if (!shouldMhnetAction()) {
+    return;
+  }
+
+  const localFile = tmp.fileSync();
+  const ftpBatch = `
+get /persistent/PublishLiveCamera/${rootId}.tar.xz ${localFile.name}
+` ;
+
+  await runFtpCommand(ftpBatch);
+
+  await expandArchive(localFile.name);
+}
+
+async function pushCache(rootId: string, dirs: string[]): Promise<void> {
+  if (!shouldMhnetAction()) {
+    return;
+  }
+
+  const archiveFile = await createArchive(dirs);
+  const ftpBatch = `
+put ${archiveFile} /upload/PublishLiveCamera/${rootId}.tar.xz
+`;
+
+  await runFtpCommand(ftpBatch);
+}
+
 async function runTask(rootId: string, timeoutTime: Date): Promise<[number, number]> {
+
+  await pullCache(rootId);
+
   let tasks: TaskItem[] = [];
   let now: number;
   let taskDone = 0;
@@ -402,15 +405,9 @@ async function runTask(rootId: string, timeoutTime: Date): Promise<[number, numb
 
       const dirs = task.json.affectedOn.map(a => WorkingDatabase[a]);
 
-      if (dirs.length > 0) {
-        await commitWorking(`task ${task.json.id} is done`, ...dirs);
-      }
-
-      // Give up if pull is failed.
-      await pullWorking();
+      await pushCache(task.json.id, dirs);
     }
 
-    await pushWorkingSticky();
 
     now = getNow();
   }

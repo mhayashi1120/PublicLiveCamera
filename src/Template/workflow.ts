@@ -67,6 +67,11 @@ jobs:
     timeout-minutes: 15
     env:
       LIVECAMERA_GOOGLE_API_TOKEN: \${{ secrets.GOOGLE_API_TOKEN }}
+      PUBLISH_SERVER_HOST: \${{ secrets.PUBLISH_SERVER_HOST }}
+      PUBLISH_SERVER_PORT: \${{ secrets.PUBLISH_SERVER_PORT }}
+      PUBLISH_SERVER_USER: \${{ secrets.PUBLISH_SERVER_USER }}
+      SSH_KEY_FILE: \${GITHUB_WORKSPACE}/.ssh/id_ecdsa
+      SSH_CONFIG_FILE: \${GITHUB_WORKSPACE}/.ssh/config
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -83,6 +88,11 @@ jobs:
         run: |
           git config --global user.email "mhayashi1120"
           git config --global user.name "Github Action workflow auto build"
+      - name: Setup sync environment
+        run: |
+          echo "\${{ secrets.PUBLISH_SERVER_SSH_KEY }}" > \${SSH_KEY_FILE}
+          echo "" > \${SSH_CONFIG_FILE}
+          echo "IdentitiesOnly=true" >> \${SSH_CONFIG_FILE}
       - name: Prepare packages
         run: |
           npm install
