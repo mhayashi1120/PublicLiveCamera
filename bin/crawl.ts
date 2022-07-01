@@ -16,6 +16,7 @@ function usage() {
   console.log(`usage: crawl index [ { -l | --limit-days } DAYS ] COUNTRY [ LOCALS ... ]`);
   console.log(`       crawl validate COUNTRY [ LOCALS ... ]`);
   console.log(`       crawl activate [ { -I | --maximum-interval } SECONDS ] COUNTRY [ LOCALS ... ]`);
+  console.log(`       crawl print-id COUNTRY [ LOCALS ... ]`);
   console.log(``);
   console.log(`subcommand alias: index -> run`);
   console.log(``);
@@ -93,6 +94,17 @@ function doValidate(args: string[]) {
   washer.checkLocalDuplicates(path);
 }
 
+function doPrintId(args: string[]): void {
+  const program = new Command();
+
+  program.parse(args, {from: 'user'});
+
+  const runner = argsToRunner(args);
+  const runnerId = runner.getRunnerId();
+
+  console.log(`id: ${runnerId}`);
+}
+
 function doCrawl(args: string[]): void {
 
   const program = new Command();
@@ -132,6 +144,9 @@ function doCrawl(args: string[]): void {
       break;
     case 'validate':
       doValidate(subArgs);
+      break;
+    case 'print-id':
+      doPrintId(subArgs);
       break;
     default:
       usage();
