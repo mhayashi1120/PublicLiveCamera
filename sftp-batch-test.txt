@@ -1,0 +1,1 @@
+put package.json /share/upload/pacakge.json

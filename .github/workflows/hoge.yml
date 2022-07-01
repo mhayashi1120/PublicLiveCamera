@@ -1,0 +1,40 @@
+name: Scheduler task test
+
+on:
+  push
+
+jobs:
+  scheduledTask:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      LIVECAMERA_GOOGLE_API_TOKEN: ${{ secrets.GOOGLE_API_TOKEN }}
+      PUBLISH_SERVER_HOST: ${{ secrets.PUBLISH_SERVER_HOST }}
+      PUBLISH_SERVER_PORT: ${{ secrets.PUBLISH_SERVER_PORT }}
+      PUBLISH_SERVER_USER: ${{ secrets.PUBLISH_SERVER_USER }}
+      SSH_KEY_FILE: ${GITHUB_WORKSPACE}/.ssh/id_ecdsa
+      SSH_CONFIG_FILE: ${GITHUB_WORKSPACE}/.ssh/config
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Check OS environment
+        run: |
+          which ip && ip address
+          which ip && ip route
+      - name: Setup global environment
+        run: |
+          echo ${GITHUB_WORKSPACE}/node_modules/.bin >> ${GITHUB_PATH}
+      - name: Setup sync environment
+        run: |
+          mkdir -p ${GITHUB_WORKSPACE}/.ssh/
+          echo "${{ secrets.PUBLISH_SERVER_SSH_KEY }}" > ${SSH_KEY_FILE}
+          echo "" > ${SSH_CONFIG_FILE}
+          echo "IdentitiesOnly=true" >> ${SSH_CONFIG_FILE}
+      - name: Prepare packages
+        run: |
+          npm install
+      - name: Testing upload
+        run: |
+          sftp -b sftp-batch-test.txt -i ${SSH_KEY_FILE} -F ${SSH_CONFIG_FILE} -P ${PUBLISH_SERVER_PORT} ${PUBLISH_SERVER_USER}@${PUBLISH_SERVER_HOST}

@@ -321,7 +321,7 @@ async function runFtpCommand(commands: string): Promise<void> {
 
   writeText(batchFile.name, commands);
 
-  await execCommand('sftp', ['-b', batchFile.name, '-p', port, '-F', sshConfigFile, '-i', sshKeyFile, `${user}@${host}`]);
+  await execCommand('sftp', ['-b', batchFile.name, '-P', port, '-F', sshConfigFile, '-i', sshKeyFile, `${user}@${host}`]);
 }
 
 async function pullCache(rootId: string): Promise<void> {
