@@ -12,6 +12,7 @@ export interface BaseTaskJson {
   createdAt: string;
   reservedAt: string;
   affectedOn?: WorkingType[];
+  affectedOnCache?: string;
   interval: number;
   // TODO no need?
   lastExecutedAt?: string;

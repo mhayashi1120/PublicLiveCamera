@@ -434,16 +434,17 @@ function writeRootTask(json: BaseTaskJson) {
   writeJson(file, json);
 }
 
-function reserveRootTask(time: Date, interval: number, command: string, args: string[], affectedOn: WorkingType[], name?: string): string {
+function reserveRootTask(time: Date, interval: number, command: string, args: string[], affectedOn: WorkingType[], friendlyName?: string, cacheId?: string): string {
   const id = generateRandomId();
   const json: RootTaskJson = {
     id,
-    friendlyName: name,
+    friendlyName,
     interval,
     taskType: 'root',
     command,
     args,
     affectedOn: affectedOn,
+    affectedOnCache: cacheId,
     createdAt: new Date().toISOString(),
     reservedAt: time.toISOString(),
   };
@@ -533,7 +534,8 @@ function doAddCrawler(args: string[]) {
 
   const randomDelay = (Math.random() * 60) + 60;
   const reservedTime = incSeconds(randomDelay);
-  const id = reserveRootTask(reservedTime, indexingInterval, './bin/crawl.ts', crawlArgs, ['cache'], name);
+  const cacheId = runner.getRunnerId();
+  const id = reserveRootTask(reservedTime, indexingInterval, './bin/crawl.ts', crawlArgs, ['cache'], name, cacheId);
 
   const validateArgs = ['validate', ...restArgs];
 
