@@ -1,14 +1,11 @@
 #!/usr/bin/env -S ts-node -r tsconfig-paths/register
 
-import * as fs from 'fs';
-import * as path from 'path';
 import { Command } from 'commander';
 import { OpenLogging, INFO, } from 'Logging';
 
 import { argToPositiveNumber, } from 'CommanderTools';
 import {
   PubVersionFile, getIndexRootDirectory, CrawlDataDirectory,
-  getDailyThumbResource, PubDirectory,
  } from 'Settings';
 
 import { writeJson, } from 'CrawlerTools';
@@ -21,8 +18,6 @@ function usage() {
   console.log(`usage: publish build`);
   console.log(`       publish generate-version`);
   console.log(`       publish remove-entry S2CellId`);
-  console.log(`       publish prepare-daily-directory [ { -d | --days } DAYS ]`);
-  console.log(`       publish expire-daily-directory [ { -p | --past-days } DAYS ] [ { -l | --limit-days } DAYS ]`);
   console.log(`       publish expire [ { -d | --days } DAYS ]`);
   console.log(``);
   console.log(` This command controls published S2 managed tree.`);
@@ -82,72 +77,6 @@ function doGenerateVersion(_: string[]) {
   writeJson(PubVersionFile, json);
 }
 
-function doPrepareDailyDirectory(args: string[]) {
-  const program = new Command();
-
-  program.option<number>('-d, --days <days>',
-                         'Following days to prepare directories. Default is 5',
-                         argToPositiveNumber, 5);
-
-  program.parse(args, {from: 'user'});
-
-  const futureDays = program.opts().days as number;
-  const activator = new Activator();
-
-  // TODO should move to Activator.
-  for (const v of activator.getVersions()) {
-    for (let i = 0; i <= futureDays; i++) {
-      const date = incDays(i);
-
-      const resource = getDailyThumbResource(v.targetPath, date);
-      const dir = path.join(PubDirectory, resource);
-
-      if (!fs.existsSync(dir)) {
-        INFO(`Creating directory ${resource}`);
-        fs.mkdirSync(dir, {recursive: true});
-      }
-
-      const placeholderFile = path.join(dir, '.placeholder');
-
-      fs.writeFileSync(placeholderFile, '');
-    }
-  }
-}
-
-function doExpireDailyDirectory(args: string[]) {
-  const program = new Command();
-
-  program.option<number>('-p, --past-days <days>',
-                         'Following days to expire directories. Default is 2.',
-                         argToPositiveNumber, 2);
-  program.option<number>('-l, --limit-days <days>',
-                         'Limit of following days to expire directories. Default is 10.',
-                         argToPositiveNumber, 10);
-
-  program.parse(args, {from: 'user'});
-
-  const pastDays = program.opts().pastDays as number;
-  const limitDays = program.opts().limitDays as number;
-  const activator = new Activator();
-
-  // TODO should move to Activator.
-  for (const v of activator.getVersions()) {
-    for (let i = pastDays; i <= limitDays; i++) {
-      const date = incDays(-i);
-      const resource = getDailyThumbResource(v.targetPath, date);
-      const dir = path.join(PubDirectory, resource);
-
-      if (!fs.existsSync(dir)) {
-        INFO(`Missing ${date} directory.`);
-        continue;
-      }
-
-      INFO(`Deleting directory ${resource}`);
-      fs.rmSync(dir, {recursive: true});
-    }
-  }
-}
-
 function doExpire(args: string[]) {
   const program = new Command();
 
@@ -204,12 +133,6 @@ function doPublish(args: string[]) {
       break;
     case 'generate-version':
       doGenerateVersion(subArgs);
-      break;
-    case 'prepare-daily-directory':
-      doPrepareDailyDirectory(subArgs);
-      break;
-    case 'expire-daily-directory':
-      doExpireDailyDirectory(subArgs);
       break;
     case 'expire':
       doExpire(subArgs);
