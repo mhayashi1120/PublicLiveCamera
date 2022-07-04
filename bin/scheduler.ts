@@ -34,10 +34,8 @@ interface TaskItem {
   taskFile: string;
 }
 
-let forceMhnetAction: boolean = false;
-
 function usage() {
-  console.log(`usage: scheduler run [ { -t | --timeout } SECONDS ] [ -F | --force-mhnet-action ] ROOT_ID [ ... ]`);
+  console.log(`usage: scheduler run [ { -t | --timeout } SECONDS ] ROOT_ID [ ... ]`);
   console.log(`       scheduler add [ { -i | --interval } SECOND ] [ { -d | --delay } SECONDS ] \\`);
   console.log(`            [ { -a | --affected-on } TARGETS ]`);
   console.log(`            command [ args... ]`);
@@ -211,7 +209,7 @@ async function execCommand(command: string, args: string[]): Promise<void> {
 }
 
 function shouldMhnetAction(): boolean {
-  return isGithubAction() || forceMhnetAction;
+  return isGithubAction();
 }
 
 function isGithubAction(): boolean {
@@ -257,15 +255,10 @@ async function execRun(args: string[]) {
   program.option('-t, --timeout <seconds>',
                  'Terminate scheduler after the seconds',
                  argToSeconds , (10 * 60));
-  program.option('-F, --force-mhnet-action',
-                 'Force git commit and pull on the working copy like working on Github Action',
-                 false);
 
   const timeoutSec = program.opts().timeout as number;
 
   program.parse(args, {from: 'user'});
-
-  forceMhnetAction = program.opts().forceMhnetAction as boolean;
 
   const restArgs = program.args;
 
@@ -331,7 +324,7 @@ async function pullCache(rootId: string): Promise<void> {
 
   const localFile = tmp.fileSync();
   const ftpBatch = `
-get /persistent/PublishLiveCamera/${rootId}.tar.xz ${localFile.name}
+get /PublicLiveCamera/persistent/${rootId}.tar.xz ${localFile.name}
 ` ;
 
   await runFtpCommand(ftpBatch);
@@ -346,7 +339,7 @@ async function pushCache(rootId: string, dirs: string[]): Promise<void> {
 
   const archiveFile = await createArchive(dirs);
   const ftpBatch = `
-put ${archiveFile} /upload/PublishLiveCamera/${rootId}.tar.xz
+put ${archiveFile} /PublicLiveCamera/upload/${rootId}.tar.xz
 `;
 
   await runFtpCommand(ftpBatch);

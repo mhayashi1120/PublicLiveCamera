@@ -1,0 +1,5 @@
+Match Group publivecam-dev
+  ChrootDirectory "TOOD path to local public-live-camera.config.lisp"
+  X11Forwarding no
+  AllowTcpForwarding no
+  ForceCommand internal-sftp
