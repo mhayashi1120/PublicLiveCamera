@@ -144,7 +144,7 @@ export abstract class AbstractRunner {
       const linkStat = fs.statSync(keyLink);
 
       if (!linkStat.isSymbolicLink) {
-        throw new Error(`Unexpectedly symblink ${keyLink}`);
+        throw new Error(`Unexpectedly not a symblink ${keyLink}`);
       }
 
       const existingLink = fs.readlinkSync(keyLink);

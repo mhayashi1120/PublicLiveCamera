@@ -19,7 +19,7 @@ import {
 import workflowTemplate from 'Template/workflow';
 
 import { OpenLogging, D, ERROR, INFO, VERB, WARN, } from 'Logging';
-import { incSeconds, } from 'DateTools';
+import { formatDate, incSeconds, } from 'DateTools';
 
 import {
   ScheduleQueueDirectoryName,
@@ -288,12 +288,14 @@ async function execRun(args: string[]) {
   }
 }
 
-
 async function createArchive(dirs: string[]): Promise<string> {
   const archiveFile = tmp.fileSync();
   const rootDir = process.env['GITHUB_WORKSPACE']!;
+  const archive = archiveFile.name;
 
-  await execCommand('tar', ['cJf', archiveFile.name, '-C', rootDir, ScheduleQueueDirectoryName, ...dirs])
+  await execCommand('tar', ['cJf', archive, '-C', rootDir, ...dirs])
+
+  fs.chmodSync(archive, 0o644);
 
   return archiveFile.name;
 }
@@ -337,9 +339,14 @@ async function pushCache(rootId: string, dirs: string[]): Promise<void> {
     return;
   }
 
+  const queueDir = path.join(ScheduleQueueDirectoryName, rootId);
+
+  dirs.push(queueDir);
+
+  const datePrefix = formatDate(new Date(), 'yyyyMMdd_hhmmss');
   const archiveFile = await createArchive(dirs);
   const ftpBatch = `
-put ${archiveFile} /PublicLiveCamera/upload/${rootId}.tar.xz
+put ${archiveFile} /PublicLiveCamera/upload/${datePrefix}_${rootId}.tar.xz
 `;
 
   await runFtpCommand(ftpBatch);
@@ -354,6 +361,7 @@ async function runTask(rootId: string, timeoutTime: Date): Promise<[number, numb
   let taskDone = 0;
   let taskSucceeded = 0;
   let taskFailed = 0;
+  let affectedOn: WorkingType[] = [];
 
   while (true) {
 
@@ -396,14 +404,15 @@ async function runTask(rootId: string, timeoutTime: Date): Promise<[number, numb
       //   -> 4. rejected
       //      -> pararell process existing. abort the schedule. all changes is aborted.
 
-      const dirs = task.json.affectedOn.map(a => WorkingDatabase[a]);
-
-      await pushCache(task.json.id, dirs);
+      affectedOn = affectedOn.concat(task.json.affectedOn);
     }
-
 
     now = getNow();
   }
+
+  const dirs = affectedOn.map(a => WorkingDatabase[a]);
+
+  await pushCache(rootId, dirs);
 
   INFO(`${taskDone} task is done. Success: ${taskSucceeded} Failed: ${taskFailed}`);
 
