@@ -24,9 +24,11 @@ SSH_DEVUSER_AUTHORIZED_FILE=${SSH_DEVUSER_HOMEDIR}/authorized_keys
 SSHD_EXTENDED_CONFIG=.devconf/test_sshd_config
 
 sudo adduser ${SSH_DEVUSER} || echo "Already created ${SSH_DEVUSER}"
-sudo mkdir -p /home/${SSH_DEVUSER}/share/PublicLiveCamera
+sudo install -o root -g root --mode 755 -d /home/${SSH_DEVUSER}/share/PublicLiveCamera
+sudo install --owner root --group ${SSH_DEVUSER} --mode 774 -d /home/${SSH_DEVUSER}/share/PublicLiveCamera/upload/
+sudo install --owner root --group ${USER} --mode 775 -d /home/${SSH_DEVUSER}/share/PublicLiveCamera/persistent/
 sudo chown root:root /home/${SSH_DEVUSER}/ /home/${SSH_DEVUSER}/share/
-ssh-keygen -t ecdsa -f ${SSH_KEY_FILE}
+ssh-keygen -N "" -t ecdsa -f ${SSH_KEY_FILE}
 sudo mkdir -p ${SSH_DEVUSER_HOMEDIR}
 sudo rm -f ${SSH_DEVUSER_AUTHORIZED_FILE}
 cat ${SSH_PUBKEY_FILE} | sudo tee -a ${SSH_DEVUSER_AUTHORIZED_FILE}

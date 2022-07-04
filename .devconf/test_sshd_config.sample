@@ -1,4 +1,4 @@
-Match Group publivecam-dev
+Match User publivecam-dev
   ChrootDirectory "TOOD path to local public-live-camera.config.lisp"
   X11Forwarding no
   AllowTcpForwarding no
