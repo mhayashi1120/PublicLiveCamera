@@ -43,7 +43,7 @@ function usage() {
   console.log(`            [ --no-repeat ] [ { -R | --root-id } ROOT_ID ] \\`);
   console.log(`            [ { -a | --affected-on } TARGETS ]`);
   console.log(`            command [ args... ]`);
-  console.log(`       scheduler refresh-workflow [ -A | --all ] [ ROOT_ID ... ]`);
+  console.log(`       scheduler create-workflow [ ROOT_ID ... ]`);
   console.log(`       scheduler remove [ -A | --all-subordinate ] TASK_ID [ ... ]`);
   console.log(`       scheduler add-crawler COUNTRY [ LOCALS ... ]`);
   console.log(``);
@@ -667,33 +667,14 @@ function doRemoveTask(args: string[]) {
   }
 }
 
-function doRefreshWorkflow(args: string[]) {
+function doCreateWorkflow(args: string[]) {
   const program = new Command();
 
   program.passThroughOptions(true);
-  program.option('-A, --all', 'Refresh all root tasks.', false);
 
   program.parse(args, {from: 'user'});
 
   let rootIdList: string[] = program.args;
-
-  if (program.opts().all) {
-    if (rootIdList.length > 0) {
-      usageExit();
-    }
-
-    rootIdList = [];
-
-    for (const a of fs.readdirSync(ScheduleQueueDirectory)) {
-      const file = path.join(ScheduleQueueDirectory, a, `root.json`);
-
-      if (!fs.existsSync(file)) {
-        continue;
-      }
-
-      rootIdList.push(a);
-    }
-  }
 
   for (const rootId of rootIdList) {
     refreshGithubActionWorkflow(rootId);
@@ -744,8 +725,8 @@ async function doSchedule(args: string[]) {
     case 'run':
       await execRun(subArgs);
       break;
-    case 'refresh-workflow':
-      doRefreshWorkflow(subArgs);
+    case 'create-workflow':
+      doCreateWorkflow(subArgs);
       break;
     default:
       usageExit();
