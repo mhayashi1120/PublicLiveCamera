@@ -43,5 +43,5 @@ jobs:
       - name: Run Task Scheduler
         run: |
           cat "${SSH_CONFIG_FILE}"
-          cat "{SSH_KNOWN_HOSTS_FILE}"
+          cat "${SSH_KNOWN_HOSTS_FILE}"
           echo 1
