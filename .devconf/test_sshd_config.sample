@@ -1,5 +1,5 @@
 Match User publivecam-dev
-  ChrootDirectory "TOOD path to local public-live-camera.config.lisp"
+  ChrootDirectory "TOOD path to local public-live-camera script"
   X11Forwarding no
   AllowTcpForwarding no
   ForceCommand internal-sftp
