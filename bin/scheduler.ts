@@ -48,7 +48,8 @@ function usage() {
   console.log(`       scheduler add-crawler COUNTRY [ LOCALS ... ]`);
   console.log(``);
   console.log(` This command controls lazy schedule of tasks work on the Github Action.`);
-  console.log(` 'add-crawler' subcommand is an utility to wrap all in one task register.`);
+  console.log(` 'add-crawler' is an utility to wrap all in one task register.`);
+  console.log(` 'create-workflow' Before execute the subcommand copy queue file from publish server.`);
 
 }
 
