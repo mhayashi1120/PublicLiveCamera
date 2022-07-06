@@ -327,7 +327,8 @@ async function pullCache(rootId: string): Promise<void> {
 
   const localFile = tmp.fileSync();
   const ftpBatch = `
-get /PublicLiveCamera/persistent/${rootId}.tar.xz ${localFile.name}
+cd /PublicLiveCamera/persistent/
+get ${rootId}.tar.xz ${localFile.name}
 ` ;
 
   await runFtpCommand(ftpBatch);
@@ -346,8 +347,11 @@ async function pushCache(rootId: string, dirs: string[]): Promise<void> {
 
   const datePrefix = formatDate(new Date(), 'yyyyMMdd_hhmmss');
   const archiveFile = await createArchive(dirs);
+  const tmpUploadFile = artificialIdentity([Math.random().toString()], 30);
   const ftpBatch = `
-put ${archiveFile} /PublicLiveCamera/upload/${datePrefix}_${rootId}.tar.xz
+cd /PublicLiveCamera/upload/
+put ${archiveFile} ${tmpUploadFile}
+mv ${tmpUploadFile} ${datePrefix}_${rootId}.tar.xz
 `;
 
   await runFtpCommand(ftpBatch);
