@@ -19,6 +19,8 @@ if [ ! -f .devconf/test_id_ecdsa ] ; then
   exit 1
 fi
 
+make clean-working
+
 export SSH_KNOWN_HOSTS_FILE=.devconf/test_know_hosts
 export SSH_CONFIG_FILE=.devconf/test_config
 export SSH_KEY_FILE=.devconf/test_id_ecdsa
