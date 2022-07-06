@@ -1,7 +1,9 @@
 
-name: test
+name: Scheduler task 青森空港ライブカメラ
 
-on: push
+on:
+  schedule:
+    - cron: '*/15 * * * *'
 
 jobs:
   scheduledTask:
@@ -42,8 +44,4 @@ jobs:
           npm install
       - name: Run Task Scheduler
         run: |
-          cat "${SSH_CONFIG_FILE}"
-          cat "${SSH_KNOWN_HOSTS_FILE}" | wc -l
-          echo "ls" > batch.txt
-          sftp -b batch.txt -P "${PUBLISH_SERVER_PORT}" -F "${SSH_CONFIG_FILE}" -i "${SSH_KEY_FILE}" "${PUBLISH_SERVER_USER}@${PUBLISH_SERVER_HOST}"
-          printenv
+         npm run schedule -- 14670f6bec843b7ed368
