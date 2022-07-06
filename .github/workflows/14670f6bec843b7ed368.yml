@@ -1,7 +1,9 @@
-name: Scheduler task test
+
+name: Scheduler task 青森空港ライブカメラ
 
 on:
-  push
+  schedule:
+    - cron: '*/15 * * * *'
 
 jobs:
   scheduledTask:
@@ -40,6 +42,6 @@ jobs:
       - name: Prepare packages
         run: |
           npm install
-      - name: Testing upload
+      - name: Run Task Scheduler
         run: |
-          sftp -b sftp-batch-test.txt -i ${SSH_KEY_FILE} -F ${SSH_CONFIG_FILE} -P ${PUBLISH_SERVER_PORT} ${PUBLISH_SERVER_USER}@${PUBLISH_SERVER_HOST}
+         npm run schedule -- 14670f6bec843b7ed368
