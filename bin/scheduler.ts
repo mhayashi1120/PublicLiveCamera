@@ -44,7 +44,7 @@ function usage() {
   console.log(`            [ { -a | --affected-on } TARGETS ]`);
   console.log(`            command [ args... ]`);
   console.log(`       scheduler create-workflow [ ROOT_ID ... ]`);
-  console.log(`       scheduler remove [ -A | --all-subordinate ] TASK_ID [ ... ]`);
+  console.log(`       scheduler remove TASK_ID [ ... ]`);
   console.log(`       scheduler add-crawler COUNTRY [ LOCALS ... ]`);
   console.log(``);
   console.log(` This command controls lazy schedule of tasks work on the Github Action.`);
@@ -492,6 +492,8 @@ function doAddSubTask(args: string[]) {
   registerSubTask(rootId, delay, interval, command, commandArgs, !program.opts().noRepeat, program.opts().affectedOn as WorkingType[]);
 
   refreshGithubActionWorkflow(rootId);
+
+  afterAddQueueAction(rootId);
 }
 
 function registerSubTask(rootId: string, delay: number, interval: number, command: string, commandArgs: string[], isRepeat: boolean, affectedOn: WorkingType[]) {
@@ -551,6 +553,12 @@ function doAddCrawler(args: string[]) {
   registerSubTask(id, 2, activateInterval, './bin/crawl.ts', activateArgs, true, ['cache', 'public']);
 
   refreshGithubActionWorkflow(id);
+
+  afterAddQueueAction(id);
+}
+
+function afterAddQueueAction(id: string) {
+  INFO(`You need upload the queue directory on the publish server. on queue/${id}/`);
 }
 
 function argToWorkingTypes(v: string, _: WorkingType[]): WorkingType[] {
@@ -600,7 +608,17 @@ function doAddTask(args: string[]) {
 
   refreshGithubActionWorkflow(id)
 
-  INFO(`Created task as id:${id}`);
+  afterAddQueueAction(id);
+}
+
+function removeGithubActionWorkflow(id: string) {
+  const workflowFile = path.join(GithubWorkflowDirectory, `${id}.yml`);
+
+    if (fs.existsSync(workflowFile)) {
+      fs.rmSync(workflowFile);
+    }
+
+  WARN(`Removed id:${id} from workflow`);
 }
 
 function refreshGithubActionWorkflow(id: string) {
@@ -633,6 +651,7 @@ function refreshGithubActionWorkflow(id: string) {
   });
 
   INFO(`Writing ${workflowFile}`);
+
   writeText(workflowFile, template);
 }
 
@@ -640,7 +659,6 @@ function doRemoveTask(args: string[]) {
   const program = new Command();
 
   program.passThroughOptions(true);
-  program.option('-A, --all-subordinate', 'Purge all sub tasks.', false);
 
   program.parse(args, {from: 'user'});
 
@@ -651,19 +669,7 @@ function doRemoveTask(args: string[]) {
   }
 
   for (const rootId of restArgs) {
-    if (program.opts().allSubordinate) {
-      const taskDir = path.join(ScheduleQueueDirectory, rootId);
-
-      INFO(`Deleting task directory ${taskDir}`);
-      fs.rmSync(taskDir, {recursive: true});
-    } else {
-      const task = readRootTask(rootId);
-
-      INFO(`Deleting task file ${task.taskFile}`);
-      fs.rmSync(task.taskFile);
-    }
-
-    refreshGithubActionWorkflow(rootId);
+    removeGithubActionWorkflow(rootId);
   }
 }
 
