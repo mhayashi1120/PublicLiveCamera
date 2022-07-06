@@ -351,7 +351,7 @@ async function pushCache(rootId: string, dirs: string[]): Promise<void> {
   const ftpBatch = `
 cd /PublicLiveCamera/upload/
 put ${archiveFile} ${tmpUploadFile}
-mv ${tmpUploadFile} ${datePrefix}_${rootId}.tar.xz
+rename ${tmpUploadFile} ${datePrefix}_${rootId}.tar.xz
 `;
 
   await runFtpCommand(ftpBatch);
