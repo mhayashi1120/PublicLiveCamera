@@ -44,4 +44,6 @@ jobs:
         run: |
           cat "${SSH_CONFIG_FILE}"
           cat "${SSH_KNOWN_HOSTS_FILE}" | wc -l
-          echo 1
+          echo "ls" > batch.txt
+          sftp -b batch.txt -P "${PUBLISH_SERVER_PORT}" -F "${SSH_CONFIG_FILE}" -i "${SSH_KEY_FILE}" "${PUBLISH_SERVER_USER}@${PUBLISH_SERVER_HOST}"
+          printenv
