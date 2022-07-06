@@ -1,4 +1,3 @@
-
 all: build
 
 check: build
