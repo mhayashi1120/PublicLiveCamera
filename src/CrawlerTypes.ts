@@ -152,7 +152,7 @@ export interface ActivatedLocationJson extends RawLocationJson {
  */
 export interface ManualCrawlEntry extends ManualLocationSource {
   /**
-   * set true after work is done. should not set roughly set the value
+   * set true after work is done. should not set yet still roughly the value.
    */
   strictWork?: true,
   /**
@@ -214,6 +214,13 @@ export interface ManualLocationSource {
 }
 
 export type FullyManualImageDatabase = FullyManualImage[];
+
+export interface IndexProcessManualImage extends ManualLocationSource {
+  indexUrl: string;
+  direction?: number;
+}
+
+export type IndexProcessManualImageDatabase = IndexProcessManualImage[];
 
 export type DomainRule = DomainContainer | string | RegExp;
 

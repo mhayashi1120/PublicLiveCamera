@@ -61,6 +61,10 @@
     "aliases":["東京都"],
     "children": [
       {
+        "code": "it-ogasawara.com",
+        "aliases": ["小笠原村"]
+      },
+      {
         "code": "nishitama.info",
         "aliases": ["西多摩"]
       }
