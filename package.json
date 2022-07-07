@@ -52,8 +52,8 @@
   "devDependencies": {
     "@types/jest": "^28.1.4",
     "@types/url-parse": "^1.4.8",
-    "@typescript-eslint/eslint-plugin": "^5.30.4",
-    "@typescript-eslint/parser": "^5.30.4",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
     "commander": "^9.3.0",
     "csvtojson": "^2.0.10",
     "eslint": "^8.19.0",
