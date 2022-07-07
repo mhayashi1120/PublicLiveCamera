@@ -1,6 +1,7 @@
 [
   {
     "code": "nexco",
+    "childTable": "nexco/index.json",
     "aliases": [
       "NEXCO",
       "高速道路",
@@ -9,6 +10,7 @@
   },
   {
     "code": "mlit",
+    "childTable": "mlit/index.json",
     "aliases": [
       "MLIT",
       "国交省",
@@ -17,6 +19,7 @@
   },
   {
     "code": "Prefecture",
+    "childTable": "Prefecture/index.json",
     "aliases": [
       "都道府県",
       "Pref"

@@ -10,6 +10,7 @@ import {
 interface LocalCodeEntry {
   code: string;
   aliases: string[];
+  childTable?: string;
   children?: LocalCodeEntry[];
 }
 
@@ -53,12 +54,6 @@ function exactMatchEntry(e: LocalCodeEntry, text: string): boolean {
   return false;
 }
 
-function searchCode(db: LocalCodeDatabase, text: string): string {
-  const e = searchCodeEntry(db, text);
-
-  return e.code;
-}
-
 function searchCodeEntry(db: LocalCodeDatabase, text: string): LocalCodeEntry {
 
   const fuzzyEntries = [];
@@ -76,10 +71,10 @@ function searchCodeEntry(db: LocalCodeDatabase, text: string): LocalCodeEntry {
   if (fuzzyEntries.length === 1) {
     return fuzzyEntries[0];
   } else if (fuzzyEntries.length > 1) {
-    ERROR(`Multiple entries on`, db);
+    ERROR(`text: ${text} Multiple entries on`, db);
     throw new Error(`Matches found but not exact an entry ${fuzzyEntries}`);
   } else {
-    ERROR(`No entry on`, db);
+    ERROR(`text: ${text} No entry on`, db);
     throw new Error(`Not found for ${text}`);
   }
 }
@@ -140,12 +135,6 @@ function readMasterTable(localPath: string, derived?: LocalCodeEntry[]): LocalCo
   return table;
 }
 
-function findCountryCode(text: string) {
-  const db = readMasterTable('index.json');
-
-  return searchCode(db, text);
-}
-
 function splitLocalCodes(args: string[]): string[] {
   let res: string[] = [];
 
@@ -171,23 +160,41 @@ function getCrawlRunner(path: string): AbstractRunner {
   }
 }
 
+function getParentPath(s: string): string {
+  const m = /([^/]+)$/.exec(s);
+
+  if (!m) {
+    throw new Error(`Not a valid path ${s}`);
+  }
+
+  return s.substring(0, s.length - m[1].length);
+}
+
 export function argsToRunner(args: string[]) {
   if (args.length < 1) {
     throw new Error(`Not a valid args ${args}`);
   }
 
-  const countryCode = findCountryCode(args[0]);
+  let codes: string[] = [];
+  let tablePath = 'index.json';
+  let db = readMasterTable(tablePath);
+  let parentPath = '';
 
-  let codes: string[] = [countryCode];
-  let parent;
-
-  for (const local of splitLocalCodes(args.slice(1))) {
-    const localPath = codes.join('/');
-    const db = readMasterTable(`${localPath}/index.json`, parent);
+  for (const local of splitLocalCodes(args)) {
     const localEntry = searchCodeEntry(db, local);
 
+    if (localEntry.childTable) {
+      tablePath = path.join(parentPath, localEntry.childTable);
+      parentPath = getParentPath(tablePath);
+
+      db = readMasterTable(tablePath);
+    } else if (localEntry.children) {
+      db = localEntry.children;
+    } else {
+      db = []
+    }
+
     codes.push(localEntry.code);
-    parent = localEntry.children;
   }
 
   const localPath = codes.join('/');
