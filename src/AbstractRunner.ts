@@ -99,10 +99,14 @@ export abstract class AbstractRunner {
           const id = json.s2cellId;
           const keyLink = getIndexLinkPath(id);
 
-          INFO(`Deleting ${file} and ${keyLink}`);
+          if (fs.existsSync(file) && fs.existsSync(keyLink)) {
+            INFO(`Deleting ${file} and ${keyLink}`);
 
-          fs.rmSync(file);
-          fs.rmSync(keyLink);
+            fs.rmSync(keyLink);
+            fs.rmSync(file);
+          } else {
+            INFO(`Ignoring ${file} and ${keyLink} since not existing.`);
+          }
 
           const keyLinkDir = path.dirname(keyLink);
           const files = fs.readdirSync(keyLinkDir);
