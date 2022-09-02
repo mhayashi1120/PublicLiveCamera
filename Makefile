@@ -13,3 +13,6 @@ clean-working:
 	@for dir in __cache__ queue docs ; do \
 		git clean -f -x $${dir} ; \
 	done
+
+package-lock.json: package.json
+	npm install --package-lock-only --force
