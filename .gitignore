@@ -6,4 +6,6 @@
 /__cache__/geoindex
 /queue/*
 
+/lib/
+
 !**/.placeholder
