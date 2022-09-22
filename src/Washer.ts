@@ -3,11 +3,11 @@ import * as fs from 'fs';
 
 import { S2, S2CellKey, } from 's2-geometry';
 
-import  { WARN, } from 'Logging';
-import { readAsJson } from 'CrawlerTools';
-import { RawLocationJson, } from 'CrawlerTypes';
+import  { WARN, } from './Logging';
+import { readAsJson } from './CrawlerTools';
+import { RawLocationJson, } from './CrawlerTypes';
 
-import { CrawlDataIndexDirectory } from 'Settings';
+import { CrawlDataIndexDirectory } from './Settings';
 
 // TODO consider level
 const NEARBY_LEVEL = 25;

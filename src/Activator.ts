@@ -1,21 +1,21 @@
 import * as path from 'path';
 import * as fs from 'fs';
 
-import { ERROR, WARN, VERB, } from 'Logging';
+import { ERROR, WARN, VERB, } from './Logging';
 import { VersionJson } from '@client/Types';
 import {
   jsonNow,
   imagemagickConvert, readAsJson, writeJson, saveToTempFile, artificialIdentity,
   readMD5hash, randomSleep,
-} from 'CrawlerTools';
+} from './CrawlerTools';
 import {
   compareTimeString
-} from 'DateTools';
+} from './DateTools';
 import {
   RawLocationJson, RawLiveCameraThumb,
   ActivatedLocationJson,  ActivatedLiveCameraThumb,
-} from 'CrawlerTypes';
-import { PubDirectory, getThumbRootResource2, getThumbPrefix, } from 'Settings';
+} from './CrawlerTypes';
+import { PubDirectory, getThumbRootResource2, getThumbPrefix, } from './Settings';
 
 export interface ActivatorOpts {
   maximumInterval?: number;

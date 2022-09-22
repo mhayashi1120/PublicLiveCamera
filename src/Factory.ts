@@ -1,11 +1,11 @@
-import { AbstractRunner } from 'AbstractRunner';
+import { AbstractRunner } from './AbstractRunner';
 
 import * as fs from 'fs';
 import * as path from 'path';
 
 import {
   INFO, D, ERROR, VERB,
-} from 'Logging';
+} from './Logging';
 
 interface LocalCodeEntry {
   code: string;
@@ -14,7 +14,7 @@ interface LocalCodeEntry {
   children?: LocalCodeEntry[];
 }
 
-import { MasterDirectory, CrawlerScriptDirectory, } from 'Settings';
+import { MasterDirectory, CrawlerScriptDirectory, } from './Settings';
 
 type LocalPathDatabase = (LocalCodeEntry | LocalPathEntry)[]
 type LocalCodeDatabase = LocalCodeEntry[]

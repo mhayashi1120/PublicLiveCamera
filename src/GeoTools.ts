@@ -1,12 +1,12 @@
 import * as path from 'path';
 import * as fs from 'fs';
-import { readAsJson, writeJson, downloadJson } from 'CrawlerTools';
+import { readAsJson, writeJson, downloadJson } from './CrawlerTools';
 import { sha512 } from 'js-sha512';
 import { fromUint8Array as encodeBase64 } from 'js-base64';
 import UrlParse from 'url-parse';
-import { GeoLocationDirectory } from 'Settings';
+import { GeoLocationDirectory } from './Settings';
 
-import { VERB } from 'Logging';
+import { VERB } from './Logging';
 
 /**
  * Hint to search by area name (Many Camera has location name)

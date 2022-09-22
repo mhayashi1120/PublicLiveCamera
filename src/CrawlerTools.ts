@@ -518,7 +518,7 @@ export class MapPixelAllocation {
 }
 
 import { S2 } from 's2-geometry';
-import { CrawlDataIndexDirectory, } from 'Settings';
+import { CrawlDataIndexDirectory, } from './Settings';
 
 export function getS2CellId(lat: number, lng: number) {
   const key = S2.latLngToKey(lat, lng, S2.MAX_LEVEL);

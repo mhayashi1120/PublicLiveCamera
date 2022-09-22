@@ -1,6 +1,6 @@
 // import { AbstractRunner } from './AbstractRunner';
 
-import { ManualTargetDatabase, } from 'CrawlerTypes';
+import { ManualTargetDatabase, } from './CrawlerTypes';
 
 /**
  * Collaborate with AbstractRunner

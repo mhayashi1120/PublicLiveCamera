@@ -1,7 +1,7 @@
 import {
   CacheDirectoryName,
   PubDirectoryName,
-} from 'Settings';
+} from './Settings';
 
 export interface BaseTaskJson {
   id: string;

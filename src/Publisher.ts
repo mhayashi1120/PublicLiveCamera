@@ -1,10 +1,10 @@
 import { S2CellId } from 's2-geometry';
 
-import {  } from 'Logging';
+import {  } from './Logging';
 
-import { BasePublisher } from 'Publish/BasePublisher';
-import { Publisher050 } from 'Publish/Publisher050';
-import { Publisher051 } from 'Publish/Publisher051';
+import { BasePublisher } from './Publish/BasePublisher';
+import { Publisher050 } from './Publish/Publisher050';
+import { Publisher051 } from './Publish/Publisher051';
 
 import { VersionJson } from '@client/Types';
 

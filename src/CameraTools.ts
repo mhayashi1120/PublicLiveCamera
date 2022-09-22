@@ -1,10 +1,10 @@
-import { ManualLocationSource, }  from 'CrawlerTypes';
-import { RawLocationJson } from 'CrawlerTypes';
+import { ManualLocationSource, }  from './CrawlerTypes';
+import { RawLocationJson } from './CrawlerTypes';
 
 import { S2 } from 's2-geometry';
 import URLParse from 'url-parse';
-import { jsonNow, downloadFile, downloadText, } from 'CrawlerTools';
-import { ERROR } from 'Logging';
+import { jsonNow, downloadFile, downloadText, } from './CrawlerTools';
+import { ERROR } from './Logging';
 
 export interface CanonVBC60 extends ManualLocationSource {
   openUrl: string;
