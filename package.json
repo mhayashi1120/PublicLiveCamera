@@ -26,7 +26,7 @@
     "crawl-test": "./bin/crawl.ts -V index 392 Prefecture 17 Komatsu",
     "activate-test": "./bin/crawl.ts -V activate 392 Prefecture 17 Komatsu",
     "jest": "jest",
-    "test": "npm run build && npm run jest"
+    "test": "jest"
   },
   "keywords": [
     "crawler"

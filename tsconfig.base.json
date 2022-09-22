@@ -21,11 +21,11 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "path": {
+    "paths": {
       "s2-geometry": [
         "../client/src/@types/s2-geometry"
       ]
-    }
+    },
     "plugins": [
     ],
     "lib": [
