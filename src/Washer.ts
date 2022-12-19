@@ -50,7 +50,7 @@ export class Washer {
     const myIndex = allLinks.findIndex(l => l === file);
 
     if (myIndex < 0) {
-      console.error(`Failed search index. This must be found. ${file}`);
+      WARN(`Failed search index. This must be found. ${file}`);
       return false;
     }
 
@@ -147,7 +147,7 @@ export class Washer {
         const bodyFile = lstats.isSymbolicLink() ? fs.readlinkSync(file) : file;
 
         if (!fs.existsSync(bodyFile)) {
-          console.error(`${file} -> ${bodyFile} not exists.`);
+          WARN(`${file} -> ${bodyFile} not exists.`);
           continue;
         }
 
