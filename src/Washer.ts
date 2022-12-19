@@ -50,7 +50,8 @@ export class Washer {
     const myIndex = allLinks.findIndex(l => l === file);
 
     if (myIndex < 0) {
-      throw new Error(`Failed search index. This must be found. ${file}`);
+      console.error(`Failed search index. This must be found. ${file}`);
+      return false;
     }
 
     if (allLinks.length === 1) {
@@ -145,17 +146,17 @@ export class Washer {
         const lstats = fs.lstatSync(file);
         const bodyFile = lstats.isSymbolicLink() ? fs.readlinkSync(file) : file;
 
-
-        if (fs.existsSync(bodyFile)) {
-          const stats = fs.statSync(bodyFile);
-
-          if (stats.isDirectory()) {
-            descendants = descendants.concat(this.readFiles(bodyFile));
-          } else {
-            descendants.push(bodyFile)
-          }
-        } else {
+        if (!fs.existsSync(bodyFile)) {
           console.error(`${file} -> ${bodyFile} not exists.`);
+          continue;
+        }
+
+        const stats = fs.statSync(bodyFile);
+
+        if (stats.isDirectory()) {
+          descendants = descendants.concat(this.readFiles(bodyFile));
+        } else {
+          descendants.push(bodyFile)
         }
       }
     }
