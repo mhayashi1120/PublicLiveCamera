@@ -55,7 +55,7 @@ function usage() {
 
 function usageExit(code?: number): never {
   usage();
-  process.exit(code || 1);
+  process.exit(code === 0 ? 0 : (code || 1));
 }
 
 function argToRootId(v: string, p: string): string {
