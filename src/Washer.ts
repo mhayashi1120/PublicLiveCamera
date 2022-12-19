@@ -142,12 +142,20 @@ export class Washer {
         }
 
         const file = path.join(pathDir, fn);
-        const stats = fs.statSync(file);
+        const lstats = fs.lstatSync(file);
+        const bodyFile = lstats.isSymbolicLink() ? fs.readlinkSync(file) : file;
 
-        if (stats.isDirectory()) {
-          descendants = descendants.concat(this.readFiles(file));
+
+        if (fs.existsSync(bodyFile)) {
+          const stats = fs.statSync(bodyFile);
+
+          if (stats.isDirectory()) {
+            descendants = descendants.concat(this.readFiles(bodyFile));
+          } else {
+            descendants.push(bodyFile)
+          }
         } else {
-          descendants.push(file)
+          console.error(`${file} -> ${bodyFile} not exists.`);
         }
       }
     }
