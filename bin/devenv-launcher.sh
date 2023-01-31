@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# TODO
-# LIVECAMERA_GOOGLE_API_TOKEN: \${{ secrets.GOOGLE_API_TOKEN }}
 if ! source .devconf/test_devenv.sh ; then
   echo "Failed initialize environment" >&2
   exit 1
@@ -24,5 +22,6 @@ make clean-working
 export SSH_KNOWN_HOSTS_FILE=.devconf/test_know_hosts
 export SSH_CONFIG_FILE=.devconf/test_config
 export SSH_KEY_FILE=.devconf/test_id_ecdsa
+export LIVECAMERA_GOOGLE_API_TOKEN=$(< .devconf/test_google_api_key)
 
 "$@"
