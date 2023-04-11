@@ -1,6 +1,6 @@
 {
   "name": "@mhayashi1120/public-live-camera",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Scraping project to collect Public live camera",
   "main": "index.js",
   "scripts": {
