@@ -27,7 +27,7 @@ Web application which using this repository data is [Here](https://github.mhayas
 
 予告なくサービスが停止、変更される場合があります。収集された情報および提供するソフトウェアの瑕疵等に、管理人は一切の責任を負いません。
 
-[CC-BY-NC-4.0](LICENSE) にて配布します。
+[![License: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 # Thanks
 
