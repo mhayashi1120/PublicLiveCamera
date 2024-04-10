@@ -77,7 +77,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '18'
       - name: Check OS environment
         run: |
           which ip && ip address
