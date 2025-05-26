@@ -42,6 +42,9 @@ if (process.argv.length < 2) {
 
 const program = new Command();
 
+// TODO workaround fix now
+program.argument('args...');
+
 program.parse(process.argv.slice(2), {from: 'user'});
 
 doGenerate(program.args);

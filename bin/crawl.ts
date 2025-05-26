@@ -10,7 +10,7 @@ import {
 import { Washer } from 'Washer';
 import { Activator } from 'Activator';
 
-import { argToPositiveNumber } from 'CommanderTools';
+import { argToPositiveNumber, doTest } from 'CommanderTools';
 
 function usage() {
   console.log(`usage: crawl index [ { -l | --limit-days } DAYS ] COUNTRY [ LOCALS ... ]`);
@@ -115,6 +115,9 @@ function doCrawl(args: string[]): void {
   program.option('-V, --verbose',
                  'Verbose Debug output on or not.', false);
 
+  // TODO workaround fix now
+  program.argument('args...');
+
   program.parse(args, {from: 'user'});
 
   OpenLogging({
@@ -147,6 +150,9 @@ function doCrawl(args: string[]): void {
       break;
     case 'print-id':
       doPrintId(subArgs);
+      break;
+    case 'test':
+      doTest(subArgs);
       break;
     default:
       usage();

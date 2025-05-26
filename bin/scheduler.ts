@@ -5,7 +5,7 @@ import * as path from 'path';
 import * as tmp from 'tmp';
 import { Command } from 'commander';
 
-import { argToSeconds, argToString, } from 'CommanderTools';
+import { argToSeconds, argToString, doTest, } from 'CommanderTools';
 import { spawn, } from 'child_process';
 import { argsToRunner } from 'Factory';
 import { artificialIdentity, readAsJson, writeJson, writeText, } from 'CrawlerTools';
@@ -692,6 +692,10 @@ function doCreateWorkflow(args: string[]) {
   }
 }
 
+function doTry(args: string[]) {
+  console.log('TODO', args);
+}
+
 async function doSchedule(args: string[]) {
 
   const program = new Command();
@@ -701,6 +705,9 @@ async function doSchedule(args: string[]) {
                  'Debug output on or not.', false);
   program.option('-V, --verbose',
                  'Verbose Debug output on or not.', false);
+
+  // TODO workaround fix now
+  program.argument('args...');
 
   program.parse(args, {from: 'user'});
 
@@ -738,6 +745,9 @@ async function doSchedule(args: string[]) {
       break;
     case 'create-workflow':
       doCreateWorkflow(subArgs);
+      break;
+    case 'test':
+      doTest(subArgs);
       break;
     default:
       usageExit();

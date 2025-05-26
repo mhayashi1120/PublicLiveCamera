@@ -4,7 +4,7 @@
   "description": "Scraping project to collect Public live camera",
   "main": "index.js",
   "scripts": {
-    "try": "pwd",
+    "try": "./bin/scheduler.ts try",
     "build": "tsc -p .",
     "lint": "eslint .",
     "schedule": "./bin/scheduler.ts run",

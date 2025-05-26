@@ -3,7 +3,7 @@
 import { Command } from 'commander';
 import { OpenLogging, INFO, } from 'Logging';
 
-import { argToPositiveNumber, } from 'CommanderTools';
+import { argToPositiveNumber, doTest, } from 'CommanderTools';
 import {
   PubVersionFile, getIndexRootDirectory, CrawlDataDirectory,
  } from 'Settings';
@@ -105,6 +105,9 @@ function doPublish(args: string[]) {
   program.option('-V, --verbose',
                  'Verbose Debug output on or not.', false);
 
+  // TODO workaround fix now
+  program.argument('args...');
+
   program.parse(args, {from: 'user'});
 
   OpenLogging({
@@ -136,6 +139,9 @@ function doPublish(args: string[]) {
       break;
     case 'expire':
       doExpire(subArgs);
+      break;
+    case 'test':
+      doTest(subArgs);
       break;
     default:
       usageExit();

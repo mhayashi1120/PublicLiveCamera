@@ -1,7 +1,9 @@
-#!/usr/bin/env -S ts-node
+#!/usr/bin/env -S ts-node -r tsconfig-paths/register
 
 import { S2 } from 's2-geometry';
-import { Command } from 'commander';
+import { Command, CommanderError } from 'commander';
+
+import { doTest, } from 'CommanderTools';
 
 function usage() {
   console.log(`usage: debug id2key key [ ... ]`);
@@ -148,33 +150,23 @@ function doDebug() {
       doGeoToId(opts, geos);
     });
 
+  program.command('test')
+    .action((opts, _) => {
+      doTest(opts);
+    });
+
   // TODO now testing the subcommand via commander.
   // program.command('help2')
   //   .option('-A', "print all help2")
   //   .argument('<subcommand>')
   //   .action((_, _o, command) => command.outputHelp());
 
-  program.parse();
-
-  const restArgs = program.args;
-
-  if (restArgs.length < 1) {
+  program.exitOverride((_err: CommanderError) => {
+    // TODO workaround fix. maybe no need exit here
     usageExit();
-  }
+  });
 
-  const subCommand = restArgs[0];
-
-  switch (subCommand) {
-    case 'id2key':
-    case 'key2id':
-    case 'key2geo':
-    case 'id2geo':
-    case 'geo2id':
-    case 'help':
-      break;
-    default:
-      usageExit();
-  }
+  program.parse();
 }
 
 doDebug();

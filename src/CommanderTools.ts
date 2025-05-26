@@ -62,3 +62,10 @@ export function argToPositiveNumber(v: string, _: number): number {
 
   return parseInt(v);
 }
+
+import { INFO, ERROR } from 'Logging';
+
+export function doTest(args: string[]) {
+  INFO('This is test', args);
+  ERROR('This is test on error');
+}
