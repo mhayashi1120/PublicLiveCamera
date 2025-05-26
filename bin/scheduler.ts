@@ -692,10 +692,6 @@ function doCreateWorkflow(args: string[]) {
   }
 }
 
-function doTry(args: string[]) {
-  console.log('TODO', args);
-}
-
 async function doSchedule(args: string[]) {
 
   const program = new Command();
