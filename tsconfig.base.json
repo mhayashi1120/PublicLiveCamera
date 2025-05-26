@@ -15,7 +15,7 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2017",
+    "target": "es2024",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "typeRoots": [
@@ -29,9 +29,6 @@
     "plugins": [
     ],
     "lib": [
-      "DOM.Iterable",
-      "es2018",
-      "dom"
     ]
   }
 }
