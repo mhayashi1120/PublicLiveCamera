@@ -257,6 +257,9 @@ async function execRun(args: string[]) {
                  'Terminate scheduler after the seconds',
                  argToSeconds , (10 * 60));
 
+  // TODO workaround fix now
+  program.argument('args...');
+
   const timeoutSec = program.opts().timeout as number;
 
   program.parse(args, {from: 'user'});
@@ -480,6 +483,9 @@ function doAddSubTask(args: string[]) {
                  'Affected types separated by comma.',
                  argToWorkingTypes, []);
 
+  // TODO workaround fix now
+  program.argument('args...');
+
   program.parse(args, {from: 'user'});
 
   const rootId = program.opts().rootId as string;
@@ -526,6 +532,9 @@ function doAddCrawler(args: string[]) {
   const program = new Command();
 
   program.passThroughOptions(true);
+
+  // TODO workaround fix now
+  program.argument('args...');
 
   program.parse(args, {from: 'user'});
 
@@ -596,6 +605,9 @@ function doAddTask(args: string[]) {
                  'Task name to display friendly.',
                  argToString, null);
 
+  // TODO workaround fix now
+  program.argument('args...');
+
   program.parse(args, {from: 'user'});
 
   const interval = program.opts().interval as number;
@@ -665,6 +677,9 @@ function doRemoveTask(args: string[]) {
 
   program.passThroughOptions(true);
 
+  // TODO workaround fix now
+  program.argument('args...');
+
   program.parse(args, {from: 'user'});
 
   const restArgs = program.args;
@@ -682,6 +697,9 @@ function doCreateWorkflow(args: string[]) {
   const program = new Command();
 
   program.passThroughOptions(true);
+
+  // TODO workaround fix now
+  program.argument('args...');
 
   program.parse(args, {from: 'user'});
 

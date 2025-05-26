@@ -84,6 +84,9 @@ function doExpire(args: string[]) {
                          'Expires days (default: 20)',
                          argToPositiveNumber, 20);
 
+  // TODO workaround fix now
+  program.argument('args...');
+
   program.parse(args, {from: 'user'});
 
   const pastDays = program.opts().pastDays as number;

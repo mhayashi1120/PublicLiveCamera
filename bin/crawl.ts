@@ -36,6 +36,9 @@ function doIndex(args: string[]) {
                  'Limit of activated days',
                  argToPositiveNumber, 10);
 
+  // TODO workaround fix now
+  program.argument('args...');
+
   program.parse(args, {from: 'user'});
 
   const limitDays = program.opts().limitDays as number;
@@ -59,6 +62,9 @@ function doActivate(args: string[]): void {
                  argToPositiveNumber, 0);
   program.option('--verbose-download',
                  'Output verbose download while downloading image');
+
+  // TODO workaround fix now
+  program.argument('args...');
 
   program.parse(args, {from: 'user'});
 
@@ -96,6 +102,9 @@ function doValidate(args: string[]) {
 
 function doPrintId(args: string[]): void {
   const program = new Command();
+
+  // TODO workaround fix now
+  program.argument('args...');
 
   program.parse(args, {from: 'user'});
 
