@@ -1,16 +1,31 @@
 import { spawnSync, } from 'child_process';
 
-function tryTest(command: string) {
-  const r = spawnSync(`./bin/${command}.ts`, ['test'], { shell: false, stdio: "pipe"});
+function path(command: string): string {
+  return `./bin/${command}.ts`;
+}
 
-  expect(r.status).toBe(0);
+function tryTest(command: string) {
+  const r = spawnSync(path(command), ['test'], { shell: false, stdio: "pipe"});
+
+  test(`Calling ${command} test`, () => {
+    expect(r.status).toBe(0);
+  });
 }
 
 describe('Misc application command test', () => {
-  test('simple test (unit-test interface)', () => {
+  describe('simple test (unit-test interface)', () => {
+    // This spec is introduced for `Commander` library misunderstanding
     tryTest('scheduler');
     tryTest('publish');
     tryTest('crawl');
     tryTest('debug');
+  });
+  test('generate-key', () => {
+    const r = spawnSync(path('generate-key'), ['10'], { shell: false, stdio: "pipe"});
+
+    expect(r.status).toBe(0);
+    // TODO fixme what is this comma?
+    expect(/^,[0-9a-f]+\n,$/.test(r.output.toString().trim())).toBeTruthy();
+
   });
 });
