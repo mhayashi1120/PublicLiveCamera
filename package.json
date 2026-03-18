@@ -61,7 +61,8 @@
     "ts-jest": "^29.3.4",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "tslib": "^2.7.0"
+    "tslib": "^2.7.0",
+    "typescript": "^5.9.3"
   },
   "private": true
 }
