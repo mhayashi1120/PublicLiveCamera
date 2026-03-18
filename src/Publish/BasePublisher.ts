@@ -191,7 +191,7 @@ export class BasePublisher {
           newLeafNode.members = newLeafNode.members.concat(leafNode.members);
 
           INFO(`Deleting child segment on ${segmentBasename}`);
-          fs.rmdirSync(segmentBasename, { recursive: true });
+          fs.rmSync(segmentBasename, { recursive: true });
         }
 
         // Overwrite existing group -> leaf
